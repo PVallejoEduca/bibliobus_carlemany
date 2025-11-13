@@ -76,5 +76,3 @@ pytest
 - `02_load_data.sql` incluye bloques comentados para cargar una versión u otra del dataset.
 - El script `etl/carga.py` (opcional) muestra cómo automatizar validaciones y cargas con pandas/psycopg.
 - Cuando se cambie la fuente de datos, repetir `01_schema.sql` + `02_load_data.sql`.
-
-Con esto cualquier compañero puede levantar la BD, cargar los CSV apropiados y ejecutar la app en local. ¡Listo para subir a GitHub!***
