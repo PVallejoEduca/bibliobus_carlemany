@@ -73,5 +73,6 @@ class RatingsRepository:
             .join(models.Rating, models.Rating.copy_id == models.Copy.copy_id)
             .group_by(models.Book.book_id, models.Book.title)
             .order_by(func.count(models.Rating.rating_id).desc())
+            .limit(15)
         )
         return self.session.execute(stmt).all()

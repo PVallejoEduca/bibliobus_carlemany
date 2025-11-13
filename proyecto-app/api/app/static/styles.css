@@ -113,14 +113,6 @@ li:last-child {
   gap: 0.6rem;
 }
 
-.card img {
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  border-radius: 8px;
-  background: var(--gray-light);
-}
-
 .card-title {
   font-weight: 700;
   margin: 0;
@@ -146,10 +138,10 @@ li:last-child {
 
 .card img {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
+  height: 170px;
+  object-fit: none;
   border-radius: 8px;
-  background: var(--gray-light);
+  background: var(--white);
 }
 
 .card-title {
