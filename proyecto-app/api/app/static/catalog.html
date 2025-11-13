@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bibliobus · Catálogo</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="page">
+    <header class="topbar">
+      <div class="brand">Bibliobus</div>
+      <nav class="nav-links">
+        <a href="/catalog" class="active">Catálogo</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/recommendations">Recomendaciones</a>
+        <a href="/ratings">Valorar</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="catalogo">
+        <div class="section-heading">
+          <h2>Catálogo</h2>
+          <button id="refresh-catalogo" class="btn-secondary">Actualizar</button>
+        </div>
+        <div id="catalog-grid" class="grid"></div>
+        <div id="catalog-status" class="muted"></div>
+        <div class="pager">
+          <button id="prev-page" class="btn-secondary">Anterior</button>
+          <span id="pager-info" class="muted"></span>
+          <button id="next-page" class="btn-secondary">Siguiente</button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const FALLBACK_COVER = "/static/placeholder.svg";
+      const state = { offset: 0, limit: 12, total: 0 };
+
+      async function fetchJson(url) {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Error al consultar " + url);
+        return response.json();
+      }
+
+      async function loadCatalog() {
+        const status = document.getElementById("catalog-status");
+        const grid = document.getElementById("catalog-grid");
+        status.textContent = "Cargando catálogo...";
+        grid.innerHTML = "";
+        const search = "";
+        const language = "";
+        const category = "";
+        const params = new URLSearchParams({ limit: state.limit, offset: state.offset });
+        if (search) params.append("q", search);
+        if (language) params.append("language", language);
+        if (category) params.append("category", category);
+        try {
+          const data = await fetchJson(`/api/books?${params.toString()}`);
+          state.total = data.total;
+          grid.innerHTML = "";
+          data.items.forEach((book) => {
+            const card = document.createElement("article");
+            card.className = "card";
+            card.innerHTML = `
+              <img src="${book.image_url || FALLBACK_COVER}" alt="Portada" onerror="this.src='${FALLBACK_COVER}'; this.onerror=null;" />
+              <h3 class="card-title">${book.title}</h3>
+              <div class="muted">${book.author || "Autor desconocido"}</div>
+              <div>
+                <span class="pill">${book.language || "N/D"}</span>
+              </div>
+              <a class="btn-secondary link-button" href="/book?id=${book.book_id}">Ver detalle</a>
+            `;
+            grid.appendChild(card);
+          });
+          status.textContent = data.items.length
+            ? `Mostrando ${state.offset + 1}-${state.offset + data.items.length} de ${state.total} libros`
+            : "No se han encontrado libros con estos filtros.";
+          updatePager();
+        } catch (error) {
+          console.error(error);
+          status.textContent = "Error al cargar el catálogo.";
+        }
+      }
+
+      function updatePager() {
+        const prev = document.getElementById("prev-page");
+        const next = document.getElementById("next-page");
+        const info = document.getElementById("pager-info");
+        const totalPages = Math.max(1, Math.ceil(state.total / state.limit));
+        const currentPage = Math.floor(state.offset / state.limit) + 1;
+        info.textContent = `Página ${currentPage} de ${totalPages}`;
+        prev.disabled = state.offset === 0;
+        next.disabled = state.offset + state.limit >= state.total;
+      }
+
+      document.getElementById("refresh-catalogo").addEventListener("click", loadCatalog);
+
+      document.getElementById("prev-page").addEventListener("click", () => {
+        if (state.offset === 0) return;
+        state.offset = Math.max(0, state.offset - state.limit);
+        loadCatalog();
+      });
+
+      document.getElementById("next-page").addEventListener("click", () => {
+        if (state.offset + state.limit >= state.total) return;
+        state.offset += state.limit;
+        loadCatalog();
+      });
+
+      loadCatalog();
+    </script>
+  </body>
+</html>

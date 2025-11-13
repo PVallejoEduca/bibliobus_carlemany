@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bibliobus · Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="page">
+    <header class="topbar">
+      <div class="brand">Bibliobus</div>
+      <nav class="nav-links">
+        <a href="/catalog">Catálogo</a>
+        <a href="/dashboard" class="active">Dashboard</a>
+        <a href="/recommendations">Recomendaciones</a>
+        <a href="/ratings">Valorar</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="dashboard">
+        <h2>Panel de indicadores</h2>
+        <ul id="kpis"></ul>
+      </section>
+    </main>
+
+    <script>
+      async function fetchJson(url) {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Error al consultar " + url);
+        return response.json();
+      }
+
+      async function loadKpis() {
+        const list = document.getElementById("kpis");
+        list.innerHTML = "<li class='muted'>Cargando KPIs...</li>";
+        try {
+          const kpis = await fetchJson("/api/kpis");
+          list.innerHTML = "";
+          Object.entries(kpis).forEach(([name, value]) => {
+            const item = document.createElement("li");
+            item.textContent = `${name}: ${value}`;
+            list.appendChild(item);
+          });
+        } catch (error) {
+          list.innerHTML = "<li class='muted'>Error al recuperar los KPIs.</li>";
+        }
+      }
+
+      loadKpis();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+isbn,authors,original_publication_year,original_title,title,language_code,book_id,image_url
+9788408172173,Carlos Ruiz Zafón,2001,The Shadow of the Wind,La sombra del viento,es,1,https://example.org/img1.jpg
+9780132350884,Robert C. Martin,2008,Clean Code,Clean Code,en,2,https://example.org/img2.jpg
+9780307474728,Gabriel García Márquez,1967,One Hundred Years of Solitude,Cien años de soledad,es,3,https://example.org/img3.jpg
+,Neil Gaiman,2001,American Gods,American Gods,en,4,https://example.org/img4.jpg
+9788445074230,Ursula K. Le Guin,1969,The Left Hand of Darkness,La mano izquierda de la oscuridad,es,5,https://example.org/img5.jpg
+9788497592208,Haruki Murakami,2002,Kafka on the Shore,Kafka en la orilla,es,6,https://example.org/img6.jpg
+9781982137274,Delia Owens,2018,Where the Crawdads Sing,La chica salvaje,es,7,https://example.org/img7.jpg
+,George Orwell,1949,Nineteen Eighty-Four,1984,en,8,https://example.org/img8.jpg
+9780590353427,J. K. Rowling,1997,Harry Potter and the Philosopher's Stone,Harry Potter y la piedra filosofal,es,9,https://example.org/img9.jpg

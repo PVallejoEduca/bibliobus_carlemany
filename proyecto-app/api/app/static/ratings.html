@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bibliobus · Valorar ejemplar</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="page">
+    <header class="topbar">
+      <div class="brand">Bibliobus</div>
+      <nav class="nav-links">
+        <a href="/catalog">Catálogo</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/recommendations">Recomendaciones</a>
+        <a href="/ratings" class="active">Valorar</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="ratings">
+        <h2>Registrar valoración</h2>
+        <form id="rating-form" class="filters">
+          <input id="rating-user" type="number" min="1" placeholder="user_id" required />
+          <input id="rating-copy" type="number" min="1" placeholder="copy_id" required />
+          <input id="rating-score" type="number" min="1" max="5" placeholder="1-5" required />
+          <button type="submit">Enviar valoración</button>
+        </form>
+        <div id="rating-status" class="muted"></div>
+      </section>
+    </main>
+
+    <script>
+      document.getElementById("rating-form").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const status = document.getElementById("rating-status");
+        const payload = {
+          user_id: Number(document.getElementById("rating-user").value),
+          copy_id: Number(document.getElementById("rating-copy").value),
+          rating: Number(document.getElementById("rating-score").value),
+        };
+        status.textContent = "Enviando...";
+        try {
+          const response = await fetch("/api/ratings", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+          if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.detail || "No se pudo guardar la valoración");
+          }
+          status.textContent = "Valoración registrada. ¡Gracias!";
+          event.target.reset();
+        } catch (error) {
+          status.textContent = `Error: ${error.message}`;
+        }
+      });
+    </script>
+  </body>
+</html>

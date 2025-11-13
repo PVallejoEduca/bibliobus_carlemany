@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bibliobus · Detalle de libro</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="page">
+    <header class="topbar">
+      <div class="brand">Bibliobus</div>
+      <nav class="nav-links">
+        <a href="/catalog">Catálogo</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/recommendations">Recomendaciones</a>
+        <a href="/ratings">Valorar</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="detalle">
+        <div class="section-heading">
+          <h2>Detalle de libro</h2>
+          <a href="/catalog" class="btn-secondary" style="text-decoration:none;">Volver al catálogo</a>
+        </div>
+        <div id="book-detail" class="detail-panel muted">Cargando...</div>
+      </section>
+    </main>
+
+    <script>
+      const FALLBACK_COVER = "/static/placeholder.svg";
+      const params = new URLSearchParams(window.location.search);
+      const bookId = params.get("id");
+
+      if (!bookId) {
+        document.getElementById("book-detail").textContent = "No se indicó ningún libro.";
+      } else {
+        loadBookDetail(bookId);
+      }
+
+      async function fetchJson(url) {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Error al consultar " + url);
+        return response.json();
+      }
+
+      async function loadBookDetail(id) {
+        const container = document.getElementById("book-detail");
+        container.innerHTML = "<span class='muted'>Cargando detalle...</span>";
+        try {
+          const [book, copies, ratings] = await Promise.all([
+            fetchJson(`/api/books/${id}`),
+            fetchJson(`/api/books/${id}/copies`),
+            fetchJson(`/api/ratings?book_id=${id}`),
+          ]);
+          const ratingCount = ratings.length;
+          const avg = ratingCount ? (ratings.reduce((acc, r) => acc + r.rating, 0) / ratingCount).toFixed(2) : null;
+          const copiesList = copies.map((c) => `<li>Ejemplar #${c.copy_id}</li>`).join("");
+          container.innerHTML = `
+            <img src="${book.image_url || FALLBACK_COVER}" alt="Portada" onerror="this.src='${FALLBACK_COVER}'; this.onerror=null;" />
+            <h3>${book.title}</h3>
+            <p class="muted">${book.author || ""}</p>
+            <p>Idioma: ${book.language || "N/D"} · Año: ${book.published_year || "N/D"}</p>
+            <p>Puntuación media: ${avg ? `${avg} (${ratingCount} votos)` : "Sin valoraciones"}</p>
+            <h4>Ejemplares</h4>
+            <ul>${copiesList || "<li>No hay ejemplares registrados.</li>"}</ul>
+          `;
+        } catch (error) {
+          console.error(error);
+          container.innerHTML = "<span class='muted'>Error al cargar el detalle.</span>";
+        }
+      }
+    </script>
+  </body>
+</html>

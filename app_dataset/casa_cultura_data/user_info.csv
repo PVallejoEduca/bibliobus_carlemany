@@ -1,0 +1,502 @@
+user_id,sexo,comentario,fecha_nacimiento
+1,Mujer,"Me encanta la ficción literaria con profundidad emocional e histórica, como 'La sombra del viento' o 'The Book Thief'.",08/02/1980
+2,Hombre,"Disfruto la no ficción que me hace pensar, como 'The Tipping Point', y clásicos aventureros como 'On the Road'.",02/04/1990
+3,Hombre,Prefiero clásicos oscuros como 'Slaughterhouse-Five' y exploraciones filosóficas como 'Ishmael'.,09/11/1993
+4,Prefiere no responder,Me gustan las historias emocionantes como 'Life of Pi' y releer Harry Potter por nostalgia.,12/04/2000
+5,Prefiere no responder,Adoro los thrillers intensos como 'Brilliance' y la ficción literaria intrigante como 'Night Film'.,20/02/1987
+6,Mujer,Me apasionan las memorias profundas como 'The Immortal Life' y la ficción reflexiva como 'Gilead'.,06/04/1977
+7,Mujer,Disfruto la ficción literaria conmovedora como 'The Kite Runner' y exploraciones familiares como 'The Corrections'.,24/04/1983
+8,Mujer,Amo los clásicos atemporales como 'Cien años de soledad' y las historias intensas como 'Beloved'.,17/02/1975
+9,Mujer,Me atraen las novelas literarias modernas como 'The Goldfinch' y misterios como 'The Alienist'.,04/10/1989
+10,Mujer,"Disfruto una mezcla ecléctica: ficción literaria como 'Atonement', clásicos como 'Pride and Prejudice', y thrillers como 'The Da Vinci Code'.",25/10/1991
+11,Hombre,Me gustan las historias emotivas como 'The Kite Runner' y la no ficción histórica como 'John Adams' o 'Einstein'.,19/09/1985
+12,Hombre,Prefiero thrillers llenos de suspense como 'Killing Floor' y clásicos emotivos como 'To Kill a Mockingbird'.,17/01/1990
+13,Mujer,Amo la ficción literaria profunda como 'The Goldfinch' y reflexiones sociales como 'The Tipping Point'.,23/07/1987
+14,Hombre,"Disfruto la ciencia ficción como 'Ender's Game', thrillers oscuros como 'The Road', y crónicas culturales como 'Kitchen Confidential'.",11/02/1993
+15,Prefiere no responder,"Me encantan las aventuras juveniles como 'Harry Potter', la ficción reflexiva como 'The Handmaid's Tale', y lo curioso de 'Freakonomics'.",22/09/1997
+16,Mujer,Prefiero clásicos profundos como 'Anna Karenina' y exploraciones filosóficas como 'Thus Spoke Zarathustra'.,21/07/1980
+17,Hombre,Adoro los thrillers rápidos como 'The Firm' y la no ficción sobre comportamiento como 'Blink' o 'Outliers'.,15/11/1988
+18,Mujer,"Me gustan las sátiras como 'Slaughterhouse-Five', el humor de 'Me Talk Pretty One Day', y memorias como 'Just Kids'.",14/08/1992
+19,Hombre,"Disfruto la ficción literaria compleja como 'Atonement', clásicos como 'Don Quijote', y reflexiones oscuras como 'The Road'.",20/01/1983
+20,Mujer,"Disfruto una mezcla de thrillers emocionantes como los de James Patterson, romances conmovedores de Nicholas Sparks y no ficción práctica como 'The Total Money Makeover'.",02/12/1989
+21,Prefiere no responder,"Me apasionan los clásicos profundos como 'Cien años de soledad', la filosofía de Nietzsche y las aventuras mágicas de Harry Potter.",10/06/1996
+22,Hombre,"Prefiero la ciencia ficción intensa como 'Snow Crash', el terror de Stephen King y las épicas fantásticas de Robin Hobb.",26/06/1991
+23,Mujer,"Amo las historias contemporáneas emotivas como 'The Nightingale', thrillers modernos como 'The Girl on the Train' y memorias como 'The Glass Castle'.",13/01/1994
+24,Hombre,"Disfruto la ficción literaria como 'The Corrections', los clásicos de Hemingway y no ficción histórica como 'Theodore Rex'.",14/03/1983
+25,Mujer,"Me encantan las historias poéticas y reflexivas como 'Cien años de soledad', los cuentos de Shel Silverstein y las narrativas introspectivas de Paulo Coelho.",12/04/1992
+26,Hombre,"Prefiero obras oscuras y profundas como 'The Road', relatos introspectivos de Murakami y no ficción curiosa como los libros de Mary Roach.",21/08/1987
+27,Mujer,"Disfruto la ficción moderna como 'The Night Circus', ensayos humorísticos como 'Bossypants' y thrillers psicológicos como 'Gone Girl'.",03/04/1995
+28,Hombre,"Me gustan los clásicos como 'To Kill a Mockingbird', thrillers de James Patterson y memorias intensas como 'A Million Little Pieces'.",27/11/1990
+29,Mujer,"Amo los clásicos literarios como 'The Odyssey', dramas profundos como 'The Crucible' y narrativas históricas como 'The Good Earth'.",17/04/1985
+30,Hombre,"Me gustan las historias épicas como 'The Hunger Games', clásicos introspectivos como 'The Catcher in the Rye' y narrativas emotivas como 'The Kite Runner'.",10/05/1993
+31,Prefiere no responder,"Disfruto las aventuras de 'Harry Potter', distopías como 'Nineteen Eighty-Four' y fábulas políticas como 'Animal Farm'.",09/02/1997
+32,Hombre,"Amo la fantasía épica de 'The Hobbit', clásicos como 'The Great Gatsby' y aventuras modernas como 'The Hunger Games'.",01/09/1990
+33,Mujer,"Prefiero historias juveniles emotivas como 'The Fault in Our Stars', fantasías como 'A Game of Thrones' y thrillers actuales como 'The Girl on the Train'.",13/04/1998
+34,Mujer,"Me apasionan los clásicos románticos como 'Pride and Prejudice', distopías como 'Nineteen Eighty-Four' y cuentos infantiles como 'Charlotte's Web'.",07/04/1987
+35,Mujer,"Disfruto clásicos como 'Romeo and Juliet', historias mágicas como 'The Lion, the Witch and the Wardrobe' y narrativas históricas como 'The Book Thief'.",09/01/1991
+36,Prefiere no responder,"Me gustan las distopías como 'The Hunger Games', romances juveniles como 'Twilight' y clásicos morales como 'To Kill a Mockingbird'.",01/04/1996
+37,Hombre,"Amo la trilogía de 'The Hunger Games', distopías juveniles como 'The Giver' y fantasías épicas como 'A Game of Thrones'.",21/01/1999
+38,Mujer,"Prefiero las aventuras de 'Harry Potter', romances clásicos como 'Pride and Prejudice' y sátiras como 'Animal Farm'.",18/05/1992
+39,Hombre,"Disfruto la acción de 'The Hunger Games', thrillers como 'Gone Girl' y humor sci-fi como 'The Hitchhiker's Guide to the Galaxy'.",25/04/1994
+40,Mujer,"Me encantan las distopías como 'The Hunger Games', clásicos como 'To Kill a Mockingbird' y romances juveniles como 'The Fault in Our Stars'.",20/11/1995
+41,Hombre,"Amo las distopías como la trilogía de 'The Hunger Games', thrillers como 'Män som hatar kvinnor' y dramas históricos como 'The Help'.",27/02/1996
+42,Prefiere no responder,"Disfruto clásicos introspectivos como 'The Catcher in the Rye', fábulas como 'Animal Farm' y cuentos espirituales como 'O Alquimista'.",26/11/1990
+43,Mujer,"Me gustan las distopías de 'The Hunger Games', clásicos morales como 'To Kill a Mockingbird' y narrativas emotivas como 'The Kite Runner'.",10/07/1993
+44,Mujer,"Prefiero las aventuras de 'Harry Potter', romances clásicos como 'Pride and Prejudice' y thrillers como 'Angels & Demons'.",09/10/1991
+45,Hombre,"Disfruto distopías como 'The Hunger Games', clásicos como 'The Catcher in the Rye' y thrillers oscuros como 'Män som hatar kvinnor'.",20/04/1994
+46,Hombre,"Amo la acción de 'The Hunger Games', distopías juveniles como 'Divergent' y thrillers como 'Män som hatar kvinnor'.",11/12/1998
+47,Mujer,"Me encantan los thrillers como 'Angels & Demons', distopías como 'Divergent' y narrativas históricas como 'The Book Thief'.",17/05/1995
+48,Mujer,"Prefiero historias emotivas como 'The Kite Runner', clásicos trágicos como 'Romeo and Juliet' y dramas profundos como 'Les Misérables'.",09/02/1989
+49,Hombre,"Disfruto clásicos como 'The Great Gatsby', distopías como 'Nineteen Eighty-Four' y reflexiones morales como 'To Kill a Mockingbird'.",21/08/1992
+50,Prefiere no responder,"Me apasionan las aventuras mágicas de 'Harry Potter', desde 'Philosopher's Stone' hasta 'Goblet of Fire'.",03/03/1997
+51,Mujer,"Amo historias juveniles como 'The Fault in Our Stars', memorias como 'The Glass Castle' y clásicos como 'A Tale of Two Cities'.",14/06/1994
+52,Mujer,"Disfruto clásicos como 'Pride and Prejudice', distopías como 'Nineteen Eighty-Four' y reflexiones como 'The Catcher in the Rye'.",25/12/1990
+53,Hombre,"Prefiero distopías como 'Nineteen Eighty-Four', narrativas emotivas como 'The Kite Runner' y thrillers como 'The Da Vinci Code'.",02/02/1991
+54,Mujer,"Me gustan romances juveniles como 'Twilight', distopías como 'Divergent' y dramas como 'The Fault in Our Stars'.",02/05/1999
+55,Hombre,"Disfruto una mezcla de 'Harry Potter', clásicos como 'The Great Gatsby' y distopías como 'The Hunger Games'.",04/01/1993
+56,Mujer,"Amo thrillers como 'Gone Girl', dramas históricos como 'The Help' y romances intensos como 'Fifty Shades of Grey'.",05/05/1996
+57,Hombre,"Prefiero distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y acción como 'Divergent'.",22/11/1998
+58,Hombre,"Me encantan fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y distopías como 'The Hunger Games'.",28/04/1995
+59,Mujer,"Disfruto clásicos como 'Pride and Prejudice', distopías como 'Animal Farm' y reflexiones como 'The Catcher in the Rye'.",17/08/1988
+60,Mujer,"Prefiero romances como 'Twilight', historias mágicas como 'The Lion, the Witch and the Wardrobe' y clásicos como 'Little Women'.",27/01/1992
+61,Hombre,"Amo fantasías como 'The Hobbit', distopías como 'The Hunger Games' y romances clásicos como 'Pride and Prejudice'.",28/11/1994
+62,Prefiere no responder,"Disfruto clásicos como 'To Kill a Mockingbird', distopías como 'Nineteen Eighty-Four' y reflexiones como 'The Catcher in the Rye'.",12/12/1991
+63,Mujer,"Me gustan romances como 'Pride and Prejudice', distopías como 'Nineteen Eighty-Four' y narrativas exóticas como 'Memoirs of a Geisha'.",04/06/1987
+64,Hombre,"Prefiero fantasías como 'The Hobbit', juveniles como 'Looking for Alaska' y thrillers como 'The Girl on the Train'.",18/10/1997
+65,Mujer,"Disfruto clásicos como 'Pride and Prejudice', fantasías como 'The Hobbit' y reflexiones como 'The Catcher in the Rye'.",15/01/1992
+66,Mujer,"Amo las aventuras de 'Harry Potter', thrillers como 'Angels & Demons' y romances como 'Pride and Prejudice'.",24/12/1995
+67,Hombre,"Me encantan distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y thrillers como 'Män som hatar kvinnor'.",18/01/1999
+68,Prefiere no responder,"Disfruto distopías como 'Nineteen Eighty-Four', clásicos como 'Pride and Prejudice' y aventuras como 'Harry Potter'.",20/06/1990
+69,Hombre,"Prefiero clásicos como 'The Great Gatsby', thrillers como 'The Da Vinci Code' y reflexiones como 'To Kill a Mockingbird'.",05/05/1993
+70,Mujer,"Amo clásicos como 'Pride and Prejudice', thrillers como 'The Da Vinci Code' y tragedias como 'Romeo and Juliet'.",23/04/1989
+71,Mujer,"Disfruto clásicos como 'Pride and Prejudice', thrillers como 'Män som hatar kvinnor' y ciencia ficción como 'Slaughterhouse-Five'.",14/06/1991
+72,Hombre,"Amo las distopías como 'The Hunger Games', fantasías como 'The Hobbit' y reflexiones como 'The Catcher in the Rye'.",05/12/1995
+73,Mujer,"Prefiero romances como 'Twilight', clásicos como 'The Great Gatsby' y aventuras como 'Harry Potter'.",26/02/1997
+74,Prefiere no responder,"Me gustan las distopías como 'Divergent', juveniles como 'Twilight' y clásicos como 'The Catcher in the Rye'.",22/06/1998
+75,Mujer,"Disfruto aventuras como 'Harry Potter', distopías como 'The Hunger Games' y romances como 'Pride and Prejudice'.",11/04/1994
+76,Hombre,"Amo la acción de 'The Hunger Games', misterios como 'Angels & Demons' y romances como 'Twilight'.",27/08/1996
+77,Mujer,"Prefiero clásicos como 'Wuthering Heights', espiritualidad como 'O Alquimista' y realismo mágico como 'Cien años de soledad'.",07/10/1987
+78,Hombre,"Me encantan fantasías como 'The Hobbit', distopías como 'Nineteen Eighty-Four' y aventuras como 'Harry Potter'.",22/07/1992
+79,Hombre,"Disfruto clásicos como 'To Kill a Mockingbird', thrillers como 'Angels & Demons' y distopías como 'Nineteen Eighty-Four'.",24/08/1990
+80,Mujer,"Amo clásicos como 'Pride and Prejudice', reflexiones como 'The Catcher in the Rye' y dramas como 'The Kite Runner'.",07/08/1993
+81,Hombre,"Prefiero distopías como 'Fahrenheit 451', fantasías como 'The Fellowship of the Ring' y aventuras como 'Life of Pi'.",27/06/1994
+82,Mujer,"Disfruto romances como 'Pride and Prejudice', thrillers como 'Män som hatar kvinnor' y narrativas como 'The Book Thief'.",06/03/1989
+83,Hombre,"Me gustan clásicos como 'To Kill a Mockingbird', distopías como 'Nineteen Eighty-Four' y aventuras como 'Harry Potter'.",21/06/1991
+84,Mujer,"Amo thrillers como 'Gone Girl', distopías como 'The Hunger Games' y fantasías como 'A Game of Thrones'.",10/02/1996
+85,Hombre,"Disfruto clásicos como 'The Great Gatsby', thrillers como 'Angels & Demons' y aventuras como 'Harry Potter'.",15/06/1992
+86,Mujer,"Prefiero clásicos como 'The Great Gatsby', dramas como 'The Kite Runner' y fábulas como 'Animal Farm'.",09/09/1993
+87,Mujer,"Me gustan clásicos como 'Rebecca', thrillers como 'The Girl on the Train' y misterios como 'One for the Money'.",14/01/1990
+88,Hombre,"Amo fantasías como 'The Hobbit', clásicos como 'To Kill a Mockingbird' y romances como 'Twilight'.",26/12/1995
+89,Hombre,"Disfruto distopías como 'The Hunger Games', fantasías como 'The Hobbit' y clásicos como 'The Great Gatsby'.",11/06/1994
+90,Prefiere no responder,"Prefiero reflexiones como 'The Catcher in the Rye', distopías como 'The Giver' y humor como 'The Hitchhiker's Guide'.",14/12/1991
+91,Mujer,"Me encantan las aventuras de 'Harry Potter', dramas como 'The Kite Runner' y fábulas como 'Animal Farm'.",25/07/1997
+92,Hombre,"Disfruto thrillers como 'Män som hatar kvinnor', distopías como 'Fahrenheit 451' y espiritualidad como 'O Alquimista'.",10/07/1992
+93,Hombre,"Amo fantasías como 'The Fellowship of the Ring', aventuras como 'Harry Potter' y dramas como 'The Kite Runner'.",10/08/1995
+94,Mujer,"Prefiero las aventuras de 'Harry Potter', desde 'Philosopher's Stone' hasta 'Order of the Phoenix'.",22/11/1996
+95,Hombre,"Disfruto distopías como 'The Hunger Games', thrillers como 'Angels & Demons' y dramas como 'The Kite Runner'.",08/03/1993
+96,Mujer,"Me gustan distopías como 'Catching Fire', romances como 'Twilight' y fantasías como 'The Hobbit'.",22/04/1997
+97,Hombre,"Amo la trilogía de 'The Hunger Games', fantasías como 'The Fellowship of the Ring' y thrillers como 'Gone Girl'.",10/04/1994
+98,Hombre,"Disfruto distopías como 'Mockingjay', clásicos como 'The Great Gatsby' y fantasías como 'The Fellowship of the Ring'.",06/09/1995
+99,Mujer,"Prefiero thrillers como 'The Girl on the Train', clásicos como 'Frankenstein' y narrativas modernas como 'The Goldfinch'.",25/10/1991
+100,Mujer,"Me encantan clásicos como 'Pride and Prejudice', thrillers como 'The Da Vinci Code' y dramas como 'The Kite Runner'.",07/12/1989
+101,Hombre,"Disfruto clásicos como 'The Great Gatsby' y 'To Kill a Mockingbird', además de aventuras modernas como 'The Hunger Games'.",10/10/1980
+102,Mujer,"Me encantan historias juveniles como 'The Fault in Our Stars' y distopías como 'The Giver', junto a épicas como 'The Two Towers'.",12/11/2002
+103,Hombre,"Amo la trilogía de 'The Hunger Games' y thrillers como 'Män som hatar kvinnor', además de dramas como 'The Kite Runner'.",07/02/1996
+104,Mujer,"Prefiero distopías como 'Divergent', romances como 'Twilight' y fantasías como 'The Lion, the Witch and the Wardrobe'.",07/08/1999
+105,Hombre,"Disfruto acción como 'The Hunger Games', misterios como 'Angels & Demons' y fantasías como 'The Hobbit'.",15/08/1992
+106,Mujer,"Me gustan aventuras como 'Harry Potter', romances como 'Pride and Prejudice' y dramas como 'The Kite Runner'.",24/03/1986
+107,Hombre,"Amo juveniles como 'The Fault in Our Stars', thrillers como 'The Girl on the Train' y ciencia ficción como 'The Martian'.",16/06/2003
+108,Mujer,"Disfruto una mezcla de 'Harry Potter', thrillers como 'Män som hatar kvinnor' y clásicos como 'Pride and Prejudice'.",26/11/1990
+109,Mujer,"Prefiero clásicos como 'To Kill a Mockingbird' y 'The Great Gatsby', además de historias reales como 'Het Achterhuis'.",11/12/1975
+110,Hombre,Me encantan las aventuras de 'Harry Potter' y distopías como 'Nineteen Eighty-Four' y 'Animal Farm'.,16/03/1997
+111,Hombre,"Disfruto distopías como 'The Hunger Games', fantasías como 'The Hobbit' y sátiras como 'Animal Farm'.",22/06/1994
+112,Mujer,"Amo fantasías como 'The Fellowship of the Ring', clásicos como 'The Catcher in the Rye' y aventuras como 'Harry Potter'.",13/11/1983
+113,Mujer,"Prefiero clásicos románticos como 'Jane Eyre' y 'Sense and Sensibility', junto a fantasías como 'A Game of Thrones'.",27/05/1970
+114,Hombre,"Disfruto clásicos como 'To Kill a Mockingbird', distopías como 'Nineteen Eighty-Four' y romances como 'Twilight'.",20/05/1988
+115,Mujer,"Me gustan clásicos como 'Pride and Prejudice' y 'The Great Gatsby', además de distopías como 'Nineteen Eighty-Four'.",05/05/1977
+116,Hombre,"Amo fantasías como 'The Hobbit', distopías como 'The Giver' y clásicos como 'Romeo and Juliet'.",14/04/2000
+117,Mujer,"Disfruto aventuras como 'Harry Potter', distopías como 'Nineteen Eighty-Four' y dramas como 'The Kite Runner'.",11/10/1991
+118,Mujer,"Prefiero juveniles como 'The Fault in Our Stars', thrillers como 'Gone Girl' y dramas como 'My Sister's Keeper'.",11/05/1998
+119,Hombre,"Me encantan distopías como 'Divergent', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",20/10/2005
+120,Hombre,"Disfruto distopías como 'Nineteen Eighty-Four', sátiras como 'Catch-22' y realismo mágico como 'Cien años de soledad'.",09/01/1973
+121,Mujer,"Amo historias como 'The Book Thief', thrillers como 'The Girl on the Train' y aventuras como 'The Maze Runner'.",10/03/2001
+122,Hombre,"Prefiero clásicos como 'The Catcher in the Rye', thrillers como 'Angels & Demons' y fábulas como 'Animal Farm'.",19/05/1985
+123,Mujer,"Disfruto romances como 'Twilight', clásicos como 'The Great Gatsby' y juveniles como 'The Fault in Our Stars'.",07/04/1996
+124,Mujer,"Me gustan clásicos como 'Pride and Prejudice', thrillers como 'Angels & Demons' y aventuras como 'Harry Potter'.",28/11/1989
+125,Hombre,"Amo aventuras como 'Harry Potter', clásicos como 'To Kill a Mockingbird' y dramas como 'The Kite Runner'.",20/10/1993
+126,Mujer,"Disfruto thrillers como 'Män som hatar kvinnor', aventuras como 'Life of Pi' y distopías como 'Fahrenheit 451'.",28/01/1978
+127,Mujer,"Prefiero romances como 'Twilight', clásicos como 'To Kill a Mockingbird' y misterios como 'Angels & Demons'.",26/11/2000
+128,Hombre,"Me encantan distopías como 'Mockingjay' y thrillers como 'Gone Girl', con un toque de acción juvenil.",24/11/2004
+129,Mujer,"Disfruto clásicos como 'Wuthering Heights', romances como 'Fifty Shades of Grey' y dramas como 'The Secret Life of Bees'.",03/06/1987
+130,Hombre,"Amo distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y clásicos como 'The Great Gatsby'.",04/01/2002
+131,Mujer,"Disfruto aventuras como 'Harry Potter', clásicos como 'Pride and Prejudice' y dramas como 'The Kite Runner'.",03/08/1981
+132,Hombre,"Prefiero distopías como 'Divergent', clásicos como 'The Great Gatsby' y romances como 'Pride and Prejudice'.",26/07/1995
+133,Mujer,"Me gustan romances como 'Twilight', clásicos como 'To Kill a Mockingbird' y dramas como 'The Lovely Bones'.",19/04/1998
+134,Mujer,"Disfruto clásicos como 'Pride and Prejudice', juveniles como 'The Fault in Our Stars' y dramas como 'The Kite Runner'.",05/11/1984
+135,Hombre,"Amo distopías como 'The Hunger Games', fantasías como 'The Hobbit' y clásicos como 'Nineteen Eighty-Four'.",01/10/1992
+136,Mujer,"Prefiero clásicos como 'Of Mice and Men', sátiras como 'Animal Farm' y reflexiones como 'The Catcher in the Rye'.",13/03/1976
+137,Hombre,"Disfruto fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y reflexiones como 'To Kill a Mockingbird'.",26/11/1990
+138,Mujer,"Me encantan distopías como 'Mockingjay', dramas históricos como 'The Help' y thrillers como 'The Lost Symbol'.",23/11/1997
+139,Mujer,"Prefiero clásicos románticos como 'Jane Eyre', sátiras como 'Slaughterhouse-Five' y juveniles como 'The Perks of Being a Wallflower'.",14/06/1972
+140,Hombre,"Disfruto fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y distopías como 'Nineteen Eighty-Four'.",24/09/1986
+141,Mujer,"Amo aventuras como 'Harry Potter', dramas como 'The Kite Runner' y sátiras como 'Animal Farm'.",20/08/1999
+142,Mujer,"Prefiero clásicos como 'Pride and Prejudice', distopías como 'Nineteen Eighty-Four' y reflexiones como 'The Catcher in the Rye'.",26/06/1974
+143,Hombre,"Me gustan distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y romances como 'Twilight'.",18/06/2003
+144,Mujer,"Disfruto clásicos como 'Of Mice and Men', sátiras como 'Animal Farm' y reflexiones como 'The Catcher in the Rye'.",20/06/1979
+145,Mujer,"Prefiero romances como 'Twilight', thrillers como 'Män som hatar kvinnor' y clásicos como 'Romeo and Juliet'.",05/07/1991
+146,Hombre,"Amo aventuras como 'Harry Potter', thrillers como 'Män som hatar kvinnor' y clásicos como 'Lord of the Flies'.",28/02/1995
+147,Mujer,"Disfruto clásicos como 'Pride and Prejudice', distopías como 'Nineteen Eighty-Four' y fantasías como 'The Hobbit'.",16/11/1982
+148,Hombre,"Me encantan thrillers como 'The Girl on the Train', juveniles como 'The Maze Runner' y ciencia ficción como 'The Martian'.",09/11/2000
+149,Mujer,"Prefiero clásicos como 'Pride and Prejudice', thrillers como 'Angels & Demons' y reflexiones como 'The Catcher in the Rye'.",26/06/1971
+150,Hombre,"Disfruto distopías como 'The Hunger Games', aventuras como 'Harry Potter' y clásicos como 'Nineteen Eighty-Four'.",23/04/1998
+151,Mujer,"Amo distopías como 'Divergent', clásicos como 'The Great Gatsby' y reflexiones como 'To Kill a Mockingbird'.",21/05/1994
+152,Mujer,"Prefiero juveniles como 'The Fault in Our Stars', fantasías como 'A Game of Thrones' y memorias como 'Eat, Pray, Love'.",07/10/1989
+153,Mujer,"Me gustan juveniles como 'The Fault in Our Stars', thrillers como 'The Girl on the Train' y clásicos como 'Gone with the Wind'.",09/07/2001
+154,Hombre,"Disfruto clásicos como 'The Great Gatsby', distopías como 'Nineteen Eighty-Four' y romances como 'Pride and Prejudice'.",17/06/1977
+155,Mujer,"Amo distopías como 'Nineteen Eighty-Four', aventuras como 'Harry Potter' y dramas como 'The Kite Runner'.",03/06/1985
+156,Hombre,"Prefiero juveniles como 'The Fault in Our Stars', clásicos como 'The Great Gatsby' y aventuras como 'Harry Potter'.",17/01/1996
+157,Hombre,"Disfruto distopías como 'Brave New World', ciencia ficción como 'Dune' y no ficción como 'Freakonomics'.",10/05/1990
+158,Mujer,"Me gustan clásicos como 'Pride and Prejudice', fantasías como 'The Hobbit' y reflexiones como 'To Kill a Mockingbird'.",01/12/1975
+159,Hombre,"Amo aventuras como 'Harry Potter', clásicos como 'The Great Gatsby' y distopías como 'Nineteen Eighty-Four'.",12/10/1993
+160,Mujer,"Prefiero romances como 'Twilight', juveniles como 'The Fault in Our Stars' y fantasías como 'The Hobbit'.",19/09/1999
+161,Hombre,Disfruto la trilogía de 'The Hunger Games' y clásicos como 'The Great Gatsby' y 'The Catcher in the Rye'.,04/04/1997
+162,Mujer,"Me encantan clásicos como 'Little Women', thrillers como 'Män som hatar kvinnor' y poesía como 'Where the Sidewalk Ends'.",06/09/1981
+163,Hombre,"Amo distopías como 'The Hunger Games', fantasías como 'The Hobbit' y clásicos como 'Nineteen Eighty-Four'.",16/11/1992
+164,Mujer,"Disfruto romances como 'Twilight', aventuras como 'Harry Potter' y clásicos como 'The Great Gatsby'.",22/12/2004
+165,Hombre,"Prefiero distopías como 'Divergent', juveniles como 'The Fault in Our Stars' y thrillers como 'Gone Girl'.",19/08/2000
+166,Mujer,"Me gustan juveniles como 'Insurgent', clásicos como 'Romeo and Juliet' y cuentos como 'Charlotte's Web'.",03/10/1995
+167,Hombre,"Disfruto distopías como 'Fahrenheit 451', thrillers como 'The Da Vinci Code' y cuentos como 'Charlotte's Web'.",01/10/1978
+168,Mujer,"Amo aventuras como 'Harry Potter', romances como 'Pride and Prejudice' y fantasías como 'The Fellowship of the Ring'.",15/09/1991
+169,Hombre,"Prefiero juveniles como 'The Fault in Our Stars', clásicos como 'The Hobbit' y reflexiones como 'To Kill a Mockingbird'.",16/02/1986
+170,Mujer,"Disfruto thrillers como 'Män som hatar kvinnor', dramas como 'The Help' y no ficción como 'Freakonomics'.",05/09/1984
+171,Hombre,"Me encantan clásicos como 'The Odyssey', cuentos como 'Le Petit Prince' y aventuras como 'The Princess Bride'.",11/03/1970
+172,Mujer,"Amo juveniles como 'The Fault in Our Stars', thrillers como 'Gone Girl' y terror como 'The Shining'.",13/06/2002
+173,Hombre,"Disfruto distopías como 'The Hunger Games', romances como 'Twilight' y juveniles como 'The Fault in Our Stars'.",18/03/2005
+174,Mujer,"Prefiero clásicos como 'Pride and Prejudice', thrillers como 'Angels & Demons' y dramas como 'The Kite Runner'.",08/12/1979
+175,Mujer,"Me gustan clásicos como 'The Great Gatsby', aventuras como 'Life of Pi' y espiritualidad como 'O Alquimista'.",01/10/1987
+176,Hombre,"Disfruto clásicos como 'To Kill a Mockingbird', romances como 'Pride and Prejudice' y reflexiones como 'The Catcher in the Rye'.",26/03/1976
+177,Mujer,"Amo juveniles como 'The Fault in Our Stars', distopías como 'The Hunger Games' y clásicos como 'To Kill a Mockingbird'.",27/07/1998
+178,Hombre,"Prefiero distopías como 'Divergent', fantasías como 'The Hobbit' y thrillers como 'Män som hatar kvinnor'.",18/10/1994
+179,Mujer,"Disfruto romances como 'Twilight', fantasías como 'The Hobbit' y misterios como 'Angels & Demons'.",14/12/2000
+180,Hombre,"Me encantan distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y fantasías como 'The Hobbit'.",18/12/1990
+181,Mujer,"Amo la trilogía de 'The Hunger Games' y aventuras como 'Harry Potter', con un toque juvenil.",11/06/2003
+182,Mujer,"Prefiero clásicos como 'To Kill a Mockingbird', romances como 'Twilight' y dramas como 'The Kite Runner'.",26/06/1985
+183,Hombre,"Disfruto la trilogía de 'The Hunger Games', thrillers como 'Män som hatar kvinnor' y aventuras como 'Harry Potter'.",10/09/1997
+184,Mujer,"Me gustan aventuras como 'Harry Potter', clásicos como 'The Great Gatsby' y memorias como 'Het Achterhuis'.",23/09/1982
+185,Hombre,"Amo distopías como 'The Hunger Games', fantasías como 'The Hobbit' y dramas como 'The Kite Runner'.",09/06/1995
+186,Mujer,"Prefiero distopías como 'Catching Fire', romances como 'Twilight' y thrillers como 'Män som hatar kvinnor'.",05/10/1999
+187,Hombre,"Disfruto fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y reflexiones como 'To Kill a Mockingbird'.",11/08/1988
+188,Mujer,"Me encantan clásicos como 'Lord of the Flies', cuentos como 'The Lion, the Witch and the Wardrobe' y realismo mágico como 'Cien años de soledad'.",04/04/1973
+189,Hombre,"Disfruto clásicos como 'Romeo and Juliet', thrillers como 'The Da Vinci Code' y sátiras como 'Animal Farm'.",28/11/1980
+190,Mujer,"Amo fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y reflexiones como 'To Kill a Mockingbird'.",14/09/1992
+191,Hombre,"Prefiero aventuras como 'Harry Potter', clásicos como 'The Catcher in the Rye' y distopías como 'Nineteen Eighty-Four'.",25/01/1996
+192,Mujer,"Disfruto thrillers como 'Män som hatar kvinnor', juveniles como 'The Fault in Our Stars' y dramas como 'The Lovely Bones'.",26/01/1989
+193,Hombre,"Me gustan distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y clásicos como 'Pride and Prejudice'.",18/12/2001
+194,Mujer,"Prefiero clásicos como 'Pride and Prejudice', distopías como 'Nineteen Eighty-Four' y sátiras como 'Animal Farm'.",19/02/1975
+195,Hombre,"Disfruto distopías como 'Divergent', juveniles como 'The Fault in Our Stars' y clásicos como 'The Great Gatsby'.",06/08/1998
+196,Mujer,"Amo distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Catcher in the Rye'.",22/12/2004
+197,Hombre,"Prefiero clásicos como 'The Great Gatsby', thrillers como 'Angels & Demons' y dramas como 'The Kite Runner'.",13/12/1983
+198,Mujer,"Disfruto thrillers como 'Gone Girl', ciencia ficción como 'The Martian' y no ficción como 'A Short History of Nearly Everything'.",24/03/1991
+199,Mujer,"Me gustan romances como 'Twilight', distopías como 'Catching Fire' y dramas como 'The Kite Runner'.",11/02/2000
+200,Hombre,"Amo clásicos como 'Romeo and Juliet', thrillers como 'Gone Girl' y fantasías como 'A Game of Thrones'.",16/11/1986
+201,Hombre,"Disfruto clásicos como 'The Great Gatsby', fantasías como 'The Hobbit' y thrillers como 'Angels & Demons'.",08/11/1983
+202,Mujer,"Me encantan aventuras como 'Harry Potter', romances como 'Twilight' y clásicos como 'The Hobbit'.",26/03/2000
+203,Hombre,"Amo distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y clásicos como 'The Great Gatsby'.",01/09/2003
+204,Mujer,"Prefiero clásicos como 'Pride and Prejudice', dramas como 'The Kite Runner' y reflexiones como 'To Kill a Mockingbird'.",12/08/1977
+205,Hombre,"Disfruto clásicos como 'The Great Gatsby', distopías como 'Nineteen Eighty-Four' y sátiras como 'Animal Farm'.",15/12/1975
+206,Mujer,"Me gustan aventuras como 'Harry Potter', dramas como 'The Kite Runner' y narrativas como 'Memoirs of a Geisha'.",10/05/1992
+207,Hombre,"Amo clásicos como 'To Kill a Mockingbird', fantasías como 'The Hobbit' y thrillers como 'Angels & Demons'.",08/10/1986
+208,Mujer,"Prefiero distopías como 'Divergent', thrillers como 'Gone Girl' y dramas como 'The Lovely Bones'.",12/06/1998
+209,Hombre,"Disfruto aventuras como 'Harry Potter', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",14/02/1990
+210,Mujer,"Me encantan clásicos como 'Pride and Prejudice', dramas como 'The Kite Runner' y aventuras como 'Harry Potter'.",08/10/1981
+211,Hombre,"Amo distopías como 'The Hunger Games', thrillers como 'Män som hatar kvinnor' y acción como 'Divergent'.",04/12/1996
+212,Mujer,"Prefiero fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y reflexiones como 'To Kill a Mockingbird'.",12/01/1988
+213,Hombre,"Disfruto la trilogía de 'The Hunger Games', fantasías como 'The Hobbit' y thrillers como 'Gone Girl'.",17/05/2001
+214,Mujer,"Me gustan clásicos como 'The Great Gatsby', distopías como 'Nineteen Eighty-Four' y aventuras como 'Harry Potter'.",17/03/1979
+215,Hombre,"Amo clásicos como 'The Hobbit', distopías como 'Nineteen Eighty-Four' y memorias como 'Het Achterhuis'.",10/03/1973
+216,Mujer,"Disfruto clásicos como 'The Great Gatsby', thrillers como 'Gone Girl' y romances como 'Little Women'.",18/01/1994
+217,Hombre,"Prefiero clásicos como 'To Kill a Mockingbird', thrillers como 'Angels & Demons' y ciencia ficción como 'The Hitchhiker's Guide'.",13/04/1985
+218,Mujer,"Me encantan distopías como 'The Hunger Games', clásicos como 'Pride and Prejudice' y distopías como 'Nineteen Eighty-Four'.",02/08/1997
+219,Hombre,"Disfruto clásicos como 'The Great Gatsby', sátiras como 'Animal Farm' y memorias como 'Het Achterhuis'.",20/08/1978
+220,Mujer,"Amo la trilogía de 'The Hunger Games', fantasías como 'The Hobbit' y thrillers como 'Män som hatar kvinnor'.",09/07/1999
+221,Hombre,"Prefiero aventuras como 'Harry Potter' y dramas como 'The Kite Runner', con un toque de fantasía.",20/09/1991
+222,Mujer,"Disfruto distopías como 'The Hunger Games', fantasías como 'The Hobbit' y thrillers como 'Män som hatar kvinnor'.",03/03/1995
+223,Hombre,"Me gustan clásicos como 'The Great Gatsby', dramas como 'The Kite Runner' y reflexiones como 'To Kill a Mockingbird'.",24/01/1987
+224,Mujer,"Amo clásicos como 'Of Mice and Men', distopías como 'Nineteen Eighty-Four' y narrativas como 'Memoirs of a Geisha'.",21/11/1980
+225,Mujer,"Prefiero romances como 'Twilight', juveniles como 'The Fault in Our Stars' y clásicos como 'Pride and Prejudice'.",06/10/2002
+226,Hombre,"Disfruto aventuras como 'Harry Potter', clásicos como 'Pride and Prejudice' y sátiras como 'Animal Farm'.",27/12/1984
+227,Mujer,"Me encantan juveniles como 'Eleanor & Park', misterios como 'The Goldfinch' y memorias como 'Wild'.",13/09/2005
+228,Hombre,"Amo fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y reflexiones como 'To Kill a Mockingbird'.",20/03/1989
+229,Mujer,"Disfruto distopías como 'The Hunger Games', romances como 'Twilight' y dramas como 'The Kite Runner'.",12/06/2000
+230,Hombre,"Prefiero clásicos como 'Pride and Prejudice', dramas como 'The Kite Runner' y reflexiones como 'To Kill a Mockingbird'.",21/08/1982
+231,Mujer,"Me gustan distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y reflexiones como 'Of Mice and Men'.",15/08/1993
+232,Hombre,"Amo clásicos como 'The Great Gatsby', distopías como 'Nineteen Eighty-Four' y aventuras como 'Harry Potter'.",20/04/1976
+233,Mujer,"Disfruto clásicos como 'Pride and Prejudice', sátiras como 'Animal Farm' y reflexiones como 'To Kill a Mockingbird'.",28/04/1974
+234,Hombre,"Prefiero distopías como 'The Hunger Games', fantasías como 'The Hobbit' y clásicos como 'To Kill a Mockingbird'.",11/04/1998
+235,Mujer,"Me encantan juveniles como 'The Fault in Our Stars', distopías como 'Divergent' y clásicos como 'A Tale of Two Cities'.",22/12/2001
+236,Mujer,"Disfruto romances como 'Jane Eyre', distopías como 'Divergent' y dramas como 'The Lovely Bones'.",13/04/1986
+237,Hombre,"Amo aventuras como 'Harry Potter', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",03/06/2004
+238,Mujer,"Prefiero clásicos como 'The Great Gatsby', sátiras como 'Animal Farm' y espiritualidad como 'O Alquimista'.",19/09/1981
+239,Hombre,"Disfruto distopías como 'The Hunger Games', fantasías como 'The Hobbit' y memorias como 'Het Achterhuis'.",18/05/1995
+240,Mujer,"Me gustan distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",18/01/2002
+241,Hombre,"Amo distopías como 'Catching Fire', thrillers como 'Gone Girl' y dramas como 'The Secret Life of Bees'.",02/09/1997
+242,Mujer,"Disfruto clásicos como 'The Great Gatsby', fantasías como 'The Fellowship of the Ring' y dramas como 'The Kite Runner'.",28/05/1979
+243,Hombre,"Prefiero clásicos como 'The Great Gatsby', distopías como 'Nineteen Eighty-Four' y dramas como 'The Kite Runner'.",15/10/1990
+244,Mujer,"Me encantan dramas como 'The Kite Runner', thrillers como 'Män som hatar kvinnor' y aventuras como 'Harry Potter'.",19/04/1994
+245,Hombre,"Disfruto aventuras como 'Harry Potter', thrillers como 'Angels & Demons' y sátiras como 'Animal Farm'.",11/07/1985
+246,Mujer,"Amo distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y thrillers como 'Angels & Demons'.",22/11/1999
+247,Hombre,"Prefiero clásicos como 'The Great Gatsby', dramas como 'The Kite Runner' y reflexiones como 'To Kill a Mockingbird'.",07/03/1992
+248,Mujer,"Disfruto romances como 'Twilight', fantasías como 'The Hobbit' y clásicos como 'The Great Gatsby'.",19/12/2003
+249,Hombre,"Me gustan aventuras como 'Harry Potter' y reflexiones como 'The Catcher in the Rye', con un toque de fantasía.",13/10/1988
+250,Mujer,"Amo distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",22/02/2005
+251,Hombre,"Disfruto distopías como 'The Hunger Games', fantasías como 'The Hobbit' y clásicos como 'The Great Gatsby'.",16/10/1996
+252,Mujer,"Prefiero juveniles como 'The Fault in Our Stars', thrillers como 'Gone Girl' y cuentos como 'Le Petit Prince'.",05/09/1991
+253,Hombre,"Me encantan romances como 'Twilight', clásicos como 'The Great Gatsby' y reflexiones como 'To Kill a Mockingbird'.",11/10/2000
+254,Mujer,"Disfruto juveniles como 'The Fault in Our Stars', fantasías como 'The Lion, the Witch and the Wardrobe' y thrillers como 'The Girl on the Train'.",18/01/1998
+255,Hombre,"Amo clásicos como 'Pride and Prejudice', reflexiones como 'The Catcher in the Rye' y aventuras como 'Harry Potter'.",20/08/1980
+256,Mujer,"Prefiero distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",23/11/2004
+257,Hombre,"Disfruto distopías como 'Nineteen Eighty-Four', sátiras como 'Animal Farm' y clásicos como 'Jane Eyre'.",04/07/1977
+258,Mujer,"Me gustan clásicos como 'Pride and Prejudice', thrillers como 'Angels & Demons' y reflexiones como 'To Kill a Mockingbird'.",27/02/1986
+259,Hombre,"Amo romances como 'Twilight', juveniles como 'The Fault in Our Stars' y fantasías como 'The Hobbit'.",17/08/2001
+260,Mujer,"Disfruto clásicos como 'Romeo and Juliet', memorias como 'Het Achterhuis' y romances como 'Little Women'.",22/08/1975
+261,Hombre,"Prefiero distopías como 'The Hunger Games', fantasías como 'The Hobbit' y clásicos como 'The Great Gatsby'.",22/01/1993
+262,Mujer,"Me encantan thrillers como 'Gone Girl', clásicos como 'Jane Eyre' y misterios como 'Angels & Demons'.",10/09/1989
+263,Hombre,"Disfruto distopías como 'The Hunger Games', romances como 'Twilight' y reflexiones como 'The Catcher in the Rye'.",14/02/2002
+264,Mujer,"Amo clásicos como 'Pride and Prejudice', fantasías como 'The Fellowship of the Ring' y dramas como 'The Kite Runner'.",24/01/1984
+265,Hombre,"Prefiero distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y thrillers como 'Angels & Demons'.",28/08/1997
+266,Mujer,"Disfruto thrillers como 'The Girl on the Train', misterios como 'The Goldfinch' y fantasías como 'The Night Circus'.",08/07/2000
+267,Mujer,"Me gustan dramas como 'The Book Thief', thrillers como 'The Girl on the Train' y romances como 'Me Before You'.",16/10/1995
+268,Hombre,"Amo clásicos como 'To Kill a Mockingbird', fantasías como 'A Game of Thrones' y dramas como 'The Help'.",27/04/1978
+269,Mujer,"Disfruto clásicos como 'Pride and Prejudice', dramas como 'The Kite Runner' y misterios como 'The Curious Incident'.",17/04/1987
+270,Hombre,"Prefiero distopías como 'Mockingjay', aventuras como 'Harry Potter' y memorias como 'Het Achterhuis'.",09/01/1999
+271,Mujer,"Me encantan distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",27/08/2005
+272,Hombre,"Disfruto distopías como 'Catching Fire', thrillers como 'Män som hatar kvinnor' y aventuras como 'Harry Potter'.",25/08/1996
+273,Mujer,"Amo juveniles como 'The Fault in Our Stars', romances como 'Fifty Shades of Grey' y distopías como 'Insurgent'.",25/04/2001
+274,Hombre,"Prefiero clásicos como 'The Great Gatsby', fantasías como 'The Hobbit' y romances como 'Pride and Prejudice'.",11/01/1982
+275,Mujer,"Me gustan clásicos como 'Pride and Prejudice', dramas como 'The Kite Runner' y reflexiones como 'To Kill a Mockingbird'.",06/08/1990
+276,Hombre,"Disfruto distopías como 'The Hunger Games', fantasías como 'The Hobbit' y romances como 'Twilight'.",06/02/2003
+277,Mujer,"Amo juveniles como 'The Fault in Our Stars', thrillers como 'Gone Girl' y misterios como 'The Da Vinci Code'.",04/06/1994
+278,Hombre,"Prefiero distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y clásicos como 'To Kill a Mockingbird'.",02/03/1998
+279,Mujer,"Me encantan aventuras como 'Harry Potter', fantasías como 'The Hobbit' y reflexiones como 'The Catcher in the Rye'.",17/10/1991
+280,Hombre,"Disfruto distopías como 'Mockingjay', dramas como 'The Help' y clásicos como 'Of Mice and Men'.",21/05/1997
+281,Mujer,"Amo aventuras como 'Harry Potter' y distopías como 'The Hunger Games', con un toque de fantasía.",01/06/2000
+282,Hombre,"Prefiero distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",01/08/2004
+283,Mujer,"Disfruto distopías como 'The Hunger Games', fantasías como 'The Hobbit' y romances como 'Twilight'.",18/09/2002
+284,Hombre,"Me gustan distopías como 'Mockingjay', dramas como 'The Kite Runner' y aventuras como 'Harry Potter'.",14/09/1995
+285,Mujer,"Amo clásicos como 'The Great Gatsby', thrillers como 'Män som hatar kvinnor' y dramas como 'The Kite Runner'.",25/10/1979
+286,Hombre,"Disfruto thrillers como 'Gone Girl', dramas como 'The Kite Runner' y narrativas como 'Memoirs of a Geisha'.",23/08/1992
+287,Mujer,"Prefiero aventuras como 'Harry Potter', distopías como 'Fahrenheit 451' y reflexiones como 'The Catcher in the Rye'.",23/08/1986
+288,Hombre,"Me encantan aventuras como 'Harry Potter', romances como 'Twilight' y espiritualidad como 'O Alquimista'.",12/03/1999
+289,Mujer,"Disfruto aventuras como 'Harry Potter', clásicos como 'Pride and Prejudice' y fantasías como 'The Hobbit'.",28/02/1988
+290,Hombre,"Amo romances como 'Twilight', distopías como 'Divergent' y memorias como 'Het Achterhuis'.",07/07/2001
+291,Mujer,"Prefiero distopías como 'The Hunger Games', romances como 'Twilight' y thrillers como 'Män som hatar kvinnor'.",28/01/1997
+292,Hombre,"Disfruto juveniles como 'The Fault in Our Stars', distopías como 'Divergent' y memorias como 'Het Achterhuis'.",07/09/2003
+293,Mujer,"Me gustan distopías como 'The Hunger Games', fantasías como 'The Hobbit' y romances como 'Twilight'.",06/08/2005
+294,Hombre,"Amo distopías como 'Divergent', juveniles como 'The Fault in Our Stars' y thrillers como 'Män som hatar kvinnor'.",26/05/2000
+295,Mujer,"Disfruto romances como 'Twilight', distopías como 'The Hunger Games' y reflexiones como 'The Catcher in the Rye'.",06/08/1998
+296,Hombre,"Prefiero fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y distopías como 'Nineteen Eighty-Four'.",16/08/1984
+297,Mujer,"Me encantan distopías como 'Catching Fire', clásicos como 'Pride and Prejudice' y fantasías como 'The Hobbit'.",25/08/1996
+298,Hombre,"Disfruto clásicos como 'The Great Gatsby', distopías como 'The Hunger Games' y dramas como 'The Kite Runner'.",05/06/1990
+299,Mujer,"Amo fantasías como 'The Hobbit', distopías como 'Nineteen Eighty-Four' y aventuras como 'Harry Potter'.",11/10/1981
+300,Hombre,"Prefiero clásicos como 'The Great Gatsby', distopías como 'Nineteen Eighty-Four' y thrillers como 'The Da Vinci Code'.",09/11/1975
+999999,Hombre,Esto es una prueba. Enrique Pastor. CJTL.,19/08/1926
+301,Hombre,"Disfruto fantasías como 'Harry Potter' y 'The Hobbit', además de distopías como 'Nineteen Eighty-Four' y 'Animal Farm'.",26/11/1987
+302,Mujer,"Prefiero clásicos como 'Pride and Prejudice', dramas como 'The Lovely Bones' y reflexiones como 'O Alquimista'.",13/02/1980
+303,Prefiero no responder,"Me gustan distopías como 'Nineteen Eighty-Four', clásicos como 'The Catcher in the Rye' y reflexiones como 'Lord of the Flies'.",07/08/1975
+304,Mujer,"Amo clásicos como 'Pride and Prejudice', dramas como 'The Kite Runner' y narrativas como 'Memoirs of a Geisha'.",12/08/1983
+305,Prefiero no responder,"Disfruto distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",23/07/2002
+306,Mujer,"Me encantan distopías como 'The Hunger Games', memorias como 'Het Achterhuis' y dramas como 'The Help'.",19/06/1997
+307,Hombre,"Prefiero distopías como 'The Hunger Games', dramas como 'The Kite Runner' y thrillers como 'Män som hatar kvinnor'.",22/11/1990
+308,Hombre,Amo fantasías épicas como 'A Game of Thrones' y ciencia ficción como 'Ender's Game'.,08/09/1993
+309,Prefiero no responder,"Disfruto distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y dramas como 'The Kite Runner'.",21/04/1998
+310,Mujer,"Me gustan thrillers como 'Angels & Demons', dramas como 'The Help' y narrativas como 'The Book Thief'.",14/04/1985
+311,Mujer,"Prefiero romances como 'Twilight', distopías como 'Divergent' y thrillers como 'Gone Girl'.",26/11/2000
+312,Prefiero no responder,"Disfruto romances como 'Twilight', fantasías como 'The Hobbit' y thrillers como 'The Da Vinci Code'.",04/03/1996
+313,Mujer,"Amo clásicos como 'Pride and Prejudice', reflexiones como 'To Kill a Mockingbird' y tragedias como 'Romeo and Juliet'.",21/05/1978
+314,Hombre,"Me encantan distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y clásicos como 'The Great Gatsby'.",15/01/2003
+315,Hombre,Prefiero thrillers como 'The Girl on the Train' y terror como 'The Shining' y 'It'.,02/07/1992
+316,Prefiero no responder,"Disfruto clásicos como 'To Kill a Mockingbird', reflexiones como 'Lord of the Flies' y aventuras como 'Life of Pi'.",06/10/1977
+317,Hombre,"Amo distopías como 'The Hunger Games', thrillers como 'Män som hatar kvinnor' y sátiras como 'Animal Farm'.",07/11/1995
+318,Prefiero no responder,"Me gustan fantasías como 'The Hobbit', dramas como 'The Kite Runner' y aventuras como 'Harry Potter'.",16/07/1989
+319,Mujer,"Disfruto clásicos como 'Jane Eyre', aventuras como 'Harry Potter' y reflexiones como 'Fahrenheit 451'.",24/05/1984
+320,Mujer,"Prefiero clásicos como 'Pride and Prejudice', reflexiones como 'The Catcher in the Rye' y dramas como 'To Kill a Mockingbird'.",06/07/1981
+321,Prefiero no responder,"Me encantan distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",15/07/2005
+322,Mujer,"Disfruto romances como 'Twilight', fantasías como 'The Hobbit' y distopías como 'The Giver'.",26/04/1999
+323,Hombre,"Amo distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y clásicos como 'The Great Gatsby'.",13/12/2001
+324,Prefiero no responder,"Me gustan fantasías como 'The Hobbit', thrillers como 'Angels & Demons' y clásicos como 'Wuthering Heights'.",22/09/1986
+325,Prefiero no responder,"Disfruto distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",07/12/2004
+326,Mujer,"Prefiero dramas como 'The Kite Runner', clásicos como 'Pride and Prejudice' y reflexiones como 'Lord of the Flies'.",01/02/1979
+327,Mujer,"Me encantan juveniles como 'The Fault in Our Stars', thrillers como 'The Girl on the Train' y romances como 'Eleanor & Park'.",16/08/2000
+328,Prefiero no responder,"Disfruto romances como 'Twilight', dramas como 'The Kite Runner' y thrillers como 'The Da Vinci Code'.",16/10/1997
+329,Hombre,"Amo distopías como 'The Hunger Games', fantasías como 'The Hobbit' y clásicos como 'The Great Gatsby'.",16/08/1991
+330,Hombre,"Prefiero distopías como 'Nineteen Eighty-Four', thrillers como 'Gone Girl' y aventuras como 'Life of Pi'.",19/05/1973
+331,Mujer,"Me gustan clásicos como 'Pride and Prejudice', fantasías como 'The Hobbit' y reflexiones como 'The Catcher in the Rye'.",21/01/1982
+332,Hombre,"Disfruto distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y sátiras como 'Animal Farm'.",06/12/1998
+333,Prefiero no responder,"Amo aventuras como 'Harry Potter', distopías como 'Divergent' y reflexiones como 'The Catcher in the Rye'.",12/08/1994
+334,Mujer,"Me encantan dramas como 'Me Before You', clásicos como 'To Kill a Mockingbird' y misterios como 'The Goldfinch'.",09/10/1988
+335,Prefiero no responder,"Disfruto juveniles como 'The Fault in Our Stars', thrillers como 'Gone Girl' y clásicos como 'Romeo and Juliet'.",21/08/1996
+336,Hombre,"Prefiero distopías como 'Mockingjay', thrillers como 'The Girl on the Train' y terror como 'The Shining'.",22/01/1993
+337,Prefiero no responder,"Me gustan clásicos como 'To Kill a Mockingbird', distopías como 'Nineteen Eighty-Four' y memorias como 'Het Achterhuis'.",21/10/1976
+338,Hombre,"Disfruto clásicos como 'The Great Gatsby', thrillers como 'Angels & Demons' y reflexiones como 'The Catcher in the Rye'.",15/04/1990
+339,Hombre,"Amo clásicos como 'To Kill a Mockingbird', distopías como 'Nineteen Eighty-Four' y dramas como 'The Kite Runner'.",11/02/1985
+340,Prefiero no responder,"Me encantan clásicos como 'Of Mice and Men', fantasías como 'The Hobbit' y thrillers como 'The Da Vinci Code'.",05/12/1979
+341,Hombre,"Disfruto aventuras como 'Harry Potter', distopías como 'Divergent' y dramas como 'The Kite Runner'.",27/07/2002
+342,Prefiero no responder,"Prefiero fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y dramas como 'The Kite Runner'.",07/01/1992
+343,Hombre,"Me gustan distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y thrillers como 'Angels & Demons'.",14/04/1999
+344,Prefiero no responder,"Disfruto fantasías como 'The Hobbit', clásicos como 'The Catcher in the Rye' y distopías como 'Nineteen Eighty-Four'.",22/05/1986
+345,Mujer,"Amo aventuras como 'Harry Potter', dramas como 'The Kite Runner' y sátiras como 'Animal Farm'.",23/03/1995
+346,Mujer,"Me encantan distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y thrillers como 'Gone Girl'.",25/05/2000
+347,Hombre,"Disfruto fantasías como 'The Hobbit', sátiras como 'Animal Farm' y reflexiones como 'The Catcher in the Rye'.",05/06/1978
+348,Mujer,"Prefiero distopías como 'Divergent', juveniles como 'The Fault in Our Stars' y aventuras como 'Harry Potter'.",25/09/1997
+349,Hombre,"Me gustan clásicos como 'The Great Gatsby', fantasías como 'The Hobbit' y thrillers como 'Angels & Demons'.",22/04/1984
+350,Prefiero no responder,"Disfruto distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y memorias como 'Het Achterhuis'.",05/02/2001
+351,Mujer,"Amo thrillers como 'Gone Girl', dramas como 'The Help' y aventuras como 'Harry Potter'.",02/07/1989
+352,Hombre,"Me encantan distopías como 'The Hunger Games', fantasías como 'The Hobbit' y juveniles como 'The Fault in Our Stars'.",11/12/2003
+353,Mujer,"Disfruto distopías como 'The Hunger Games', romances como 'Twilight' y fantasías como 'A Game of Thrones'.",23/09/2005
+354,Prefiero no responder,"Prefiero aventuras como 'Harry Potter', clásicos como 'Pride and Prejudice' y distopías como 'Nineteen Eighty-Four'.",18/11/1991
+355,Hombre,"Me gustan distopías como 'Nineteen Eighty-Four', fantasías como 'The Fellowship of the Ring' y thrillers como 'The Da Vinci Code'.",22/01/1974
+356,Prefiero no responder,"Disfruto romances como 'Twilight', fantasías como 'The Hobbit' y clásicos como 'To Kill a Mockingbird'.",15/11/1998
+357,Hombre,"Amo clásicos como 'The Great Gatsby', distopías como 'Nineteen Eighty-Four' y fantasías como 'The Hobbit'.",22/10/1977
+358,Mujer,"Me encantan romances como 'Twilight', clásicos como 'The Great Gatsby' y dramas como 'The Kite Runner'.",28/07/2000
+359,Hombre,"Disfruto distopías como 'The Hunger Games', thrillers como 'Gone Girl' y ciencia ficción como 'Slaughterhouse-Five'.",13/01/1996
+360,Mujer,"Prefiero distopías como 'The Hunger Games', romances como 'Twilight' y thrillers como 'Män som hatar kvinnor'.",27/11/2002
+361,Prefiero no responder,"Me gustan clásicos como 'To Kill a Mockingbird', fantasías como 'The Hobbit' y memorias como 'Het Achterhuis'.",06/12/1981
+362,Mujer,"Disfruto distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'Pride and Prejudice'.",20/07/2004
+363,Prefiero no responder,"Amo distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y dramas como 'The Kite Runner'.",03/12/1999
+364,Hombre,"Me encantan thrillers como 'Angels & Demons', distopías como 'Divergent' y reflexiones como 'The Catcher in the Rye'.",04/04/1992
+365,Mujer,"Disfruto juveniles como 'The Fault in Our Stars', thrillers como 'Gone Girl' y fantasías como 'A Game of Thrones'.",19/02/1995
+366,Prefiero no responder,"Prefiero fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",26/01/1990
+367,Mujer,"Me gustan clásicos como 'Jane Eyre', dramas como 'Middlesex' y ciencia ficción como 'Dune'.",19/06/1979
+368,Hombre,"Disfruto distopías como 'The Hunger Games', romances como 'Twilight' y memorias como 'Het Achterhuis'.",19/08/2001
+369,Prefiero no responder,"Amo clásicos como 'To Kill a Mockingbird', fantasías como 'The Hobbit' y sátiras como 'Animal Farm'.",28/06/1976
+370,Hombre,Me encantan aventuras como 'Harry Potter' y thrillers como 'Angels & Demons'.,27/04/1994
+371,Mujer,"Disfruto sátiras como 'Animal Farm', memorias como 'Eat, Pray, Love' y clásicos como 'Charlotte's Web'.",20/11/1983
+372,Prefiero no responder,"Prefiero romances como 'Twilight', fantasías como 'The Hobbit' y clásicos como 'To Kill a Mockingbird'.",15/03/2005
+373,Hombre,"Me gustan distopías como 'Divergent', reflexiones como 'Lord of the Flies' y thrillers como 'The Girl on the Train'.",16/10/1997
+374,Prefiero no responder,"Disfruto distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y fantasías como 'The Hobbit'.",12/02/2000
+375,Hombre,"Amo distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y fantasías como 'The Hobbit'.",07/02/2003
+376,Prefiero no responder,"Me encantan clásicos como 'The Great Gatsby', distopías como 'Nineteen Eighty-Four' y reflexiones como 'The Catcher in the Rye'.",24/01/1978
+377,Mujer,"Disfruto distopías como 'Divergent', dramas como 'The Kite Runner' y narrativas como 'The Lovely Bones'.",22/10/1995
+378,Hombre,"Prefiero aventuras como 'Harry Potter', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",01/06/1991
+379,Mujer,"Me gustan aventuras como 'Harry Potter', clásicos como 'Pride and Prejudice' y fantasías como 'The Hobbit'.",17/06/1986
+380,Hombre,"Disfruto clásicos como 'The Great Gatsby', fantasías como 'The Hobbit' y aventuras como 'Harry Potter'.",05/04/1980
+381,Prefiero no responder,"Amo romances como 'Twilight', fantasías como 'The Fellowship of the Ring' y thrillers como 'Angels & Demons'.",23/07/1998
+382,Hombre,"Me encantan distopías como 'The Hunger Games', thrillers como 'Män som hatar kvinnor' y aventuras como 'Harry Potter'.",23/01/1996
+383,Mujer,"Disfruto romances como 'Twilight', fantasías como 'The Hobbit' y clásicos como 'Pride and Prejudice'.",17/03/2002
+384,Prefiero no responder,"Prefiero distopías como 'The Hunger Games', thrillers como 'Angels & Demons' y dramas como 'The Kite Runner'.",16/10/1999
+385,Mujer,"Me gustan distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",14/05/2005
+386,Hombre,"Disfruto aventuras como 'Harry Potter', clásicos como 'Pride and Prejudice' y sátiras como 'Animal Farm'.",26/08/1988
+387,Mujer,"Amo distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y clásicos como 'The Great Gatsby'.",21/11/2001
+388,Prefiero no responder,"Me encantan distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y clásicos como 'Pride and Prejudice'.",12/11/1997
+389,Hombre,"Disfruto distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",26/07/2004
+390,Mujer,"Prefiero thrillers como 'The Girl on the Train', distopías como 'Nineteen Eighty-Four' y romances como 'Outlander'.",28/06/1990
+391,Mujer,"Me gustan dramas como 'The Kite Runner', thrillers como 'The Girl on the Train' y narrativas como 'The Book Thief'.",24/10/1993
+392,Prefiero no responder,"Disfruto juveniles como 'The Fault in Our Stars', thrillers como 'Gone Girl' y dramas como 'The Kite Runner'.",14/05/1998
+393,Hombre,"Amo fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",09/07/1992
+394,Prefiero no responder,"Me encantan distopías como 'The Hunger Games', clásicos como 'The Catcher in the Rye' y sátiras como 'Animal Farm'.",06/10/1985
+395,Mujer,"Disfruto aventuras como 'Harry Potter', clásicos como 'Pride and Prejudice' y thrillers como 'Angels & Demons'.",11/07/1989
+396,Mujer,"Prefiero romances como 'Twilight', distopías como 'Catching Fire' y dramas como 'The Kite Runner'.",09/02/2000
+397,Hombre,"Me gustan distopías como 'The Hunger Games', romances como 'Twilight' y fantasías como 'The Hobbit'.",04/05/2003
+398,Prefiero no responder,"Disfruto clásicos como 'The Great Gatsby', fantasías como 'The Hobbit' y reflexiones como 'The Catcher in the Rye'.",25/08/1991
+399,Mujer,"Amo clásicos como 'Romeo and Juliet', dramas como 'The Secret Life of Bees' y reflexiones como 'Fahrenheit 451'.",03/03/1977
+400,Prefiero no responder,"Me encantan distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",27/01/2005
+401,Hombre,"Me gustan fantasías como 'Harry Potter' y 'The Hobbit', además de thrillers como 'Angels & Demons' y distopías como 'Catching Fire'.",12/02/1991
+402,Mujer,"Disfruto clásicos como 'Pride and Prejudice', reflexiones como 'The Catcher in the Rye' y distopías como 'Nineteen Eighty-Four'.",15/11/1983
+403,Prefiero no responder,"Amo distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",27/06/2000
+404,Prefiero no responder,"Me encantan distopías como 'Nineteen Eighty-Four', clásicos como 'Wuthering Heights' y ciencia ficción como 'Frankenstein'.",05/09/1977
+405,Mujer,"Prefiero thrillers como 'Gone Girl' y 'The Girl on the Train', además de aventuras como 'Life of Pi'.",04/06/1996
+406,Hombre,"Disfruto distopías como 'The Hunger Games', aventuras como 'Harry Potter' y thrillers como 'Angels & Demons'.",07/06/1998
+407,Mujer,"Me gustan distopías como 'The Hunger Games', romances como 'Twilight' y thrillers como 'Män som hatar kvinnor'.",15/02/2002
+408,Hombre,"Amo aventuras como 'Harry Potter', desde 'Philosopher's Stone' hasta 'Order of the Phoenix'.",13/01/1989
+409,Mujer,"Disfruto juveniles como 'The Fault in Our Stars', distopías como 'Divergent' y thrillers como 'Gone Girl'.",08/02/2000
+410,Prefiero no responder,"Me encantan clásicos como 'The Great Gatsby', distopías como 'Nineteen Eighty-Four' y thrillers como 'Gone Girl'.",10/11/1995
+411,Hombre,"Prefiero clásicos como 'The Great Gatsby', fantasías como 'The Hobbit' y distopías como 'Animal Farm'.",09/08/1980
+412,Mujer,"Disfruto clásicos como 'Pride and Prejudice', reflexiones como 'The Catcher in the Rye' y dramas como 'To Kill a Mockingbird'.",21/09/1986
+413,Mujer,"Me gustan romances como 'Twilight', clásicos como 'Pride and Prejudice' y reflexiones como 'The Catcher in the Rye'.",05/11/2003
+414,Mujer,"Amo thrillers como 'Gone Girl' y 'The Girl on the Train', además de dramas como 'The Goldfinch'.",18/10/1990
+415,Mujer,"Prefiero romances como 'Twilight', dramas como 'The Book Thief' y aventuras como 'Life of Pi'.",26/03/1984
+416,Prefiero no responder,"Disfruto distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y thrillers como 'Män som hatar kvinnor'.",24/09/2001
+417,Hombre,"Me encantan distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y juveniles como 'The Fault in Our Stars'.",22/12/2005
+418,Mujer,"Amo clásicos como 'Gone with the Wind', reflexiones como 'The Catcher in the Rye' y aventuras como 'Life of Pi'.",13/11/1978
+419,Mujer,"Disfruto distopías como 'The Hunger Games', clásicos como 'Pride and Prejudice' y memorias como 'Het Achterhuis'.",15/02/1997
+420,Prefiero no responder,"Me gustan clásicos como 'To Kill a Mockingbird', fantasías como 'The Hobbit' y dramas como 'The Kite Runner'.",06/01/1982
+421,Mujer,"Prefiero aventuras como 'Harry Potter', clásicos como 'Pride and Prejudice' y thrillers como 'Angels & Demons'.",02/06/1992
+422,Hombre,"Disfruto fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y thrillers como 'Angels & Demons'.",03/04/1988
+423,Prefiero no responder,"Me encantan clásicos como 'The Great Gatsby', thrillers como 'Män som hatar kvinnor' y dramas como 'The Lovely Bones'.",03/01/1994
+424,Mujer,"Amo clásicos como 'Pride and Prejudice', juveniles como 'The Fault in Our Stars' y reflexiones como 'The Catcher in the Rye'.",25/12/1999
+425,Hombre,"Disfruto distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y fantasías como 'The Hobbit'.",14/11/2002
+426,Mujer,"Me gustan distopías como 'The Hunger Games', thrillers como 'Gone Girl' y suspense como 'Män som hatar kvinnor'.",16/01/1996
+427,Hombre,"Prefiero thrillers como 'Angels & Demons', distopías como 'Nineteen Eighty-Four' y dramas como 'The Kite Runner'.",19/07/1993
+428,Mujer,"Disfruto romances como 'Twilight', memorias como 'Het Achterhuis' y narrativas como 'Eat, Pray, Love'.",16/01/1998
+429,Prefiero no responder,"Me encantan distopías como 'The Hunger Games', romances como 'Twilight' y thrillers como 'The Da Vinci Code'.",03/10/2000
+430,Hombre,"Amo distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y juveniles como 'The Fault in Our Stars'.",07/11/2004
+431,Mujer,"Disfruto distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",24/01/2005
+432,Hombre,"Me gustan distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y clásicos como 'The Great Gatsby'.",15/05/2001
+433,Prefiero no responder,"Prefiero distopías como 'The Hunger Games', romances como 'Twilight' y juveniles como 'The Fault in Our Stars'.",28/05/2003
+434,Mujer,"Disfruto distopías como 'The Hunger Games', thrillers como 'Gone Girl' y dramas como 'The Help'.",24/07/1997
+435,Prefiero no responder,"Me encantan aventuras como 'Harry Potter', thrillers como 'Gone Girl' y memorias como 'Eat, Pray, Love'.",09/01/1990
+436,Hombre,"Amo distopías como 'The Hunger Games', reflexiones como 'Lord of the Flies' y fantasías como 'A Game of Thrones'.",01/06/1995
+437,Prefiero no responder,"Disfruto clásicos como 'The Great Gatsby', thrillers como 'Angels & Demons' y memorias como 'Het Achterhuis'.",25/01/1979
+438,Hombre,"Me gustan aventuras como 'Harry Potter', desde 'Philosopher's Stone' hasta 'Order of the Phoenix'.",01/03/1992
+439,Hombre,"Prefiero distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y thrillers como 'Angels & Demons'.",09/08/1999
+440,Prefiero no responder,"Disfruto clásicos como 'The Great Gatsby', fantasías como 'The Hobbit' y thrillers como 'Angels & Demons'.",27/12/1985
+441,Mujer,"Me encantan romances como 'Twilight', clásicos como 'Pride and Prejudice' y reflexiones como 'The Catcher in the Rye'.",13/04/2002
+442,Hombre,"Amo distopías como 'Divergent', juveniles como 'The Fault in Our Stars' y thrillers como 'Gone Girl'.",08/12/1998
+443,Mujer,"Disfruto clásicos como 'To Kill a Mockingbird', thrillers como 'Gone Girl' y memorias como 'Eat, Pray, Love'.",20/06/1991
+444,Mujer,"Me gustan clásicos como 'Pride and Prejudice', reflexiones como 'Lord of the Flies' y tragedias como 'Romeo and Juliet'.",12/04/1981
+445,Prefiero no responder,"Prefiero distopías como 'The Hunger Games', dramas como 'The Kite Runner' y thrillers como 'Gone Girl'.",19/05/1996
+446,Hombre,"Disfruto distopías como 'The Hunger Games', romances como 'Twilight' y fantasías como 'The Hobbit'.",14/09/2005
+447,Prefiero no responder,"Me encantan distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y thrillers como 'Angels & Demons'.",20/05/2000
+448,Hombre,"Amo distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y sátiras como 'Animal Farm'.",18/11/1997
+449,Prefiero no responder,"Disfruto fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",07/01/1989
+450,Hombre,"Me gustan distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y fantasías como 'The Hobbit'.",28/03/2001
+451,Mujer,"Prefiero aventuras como 'Harry Potter', romances como 'Twilight' y dramas como 'The Kite Runner'.",17/08/2003
+452,Mujer,"Disfruto clásicos como 'Pride and Prejudice', reflexiones como 'The Catcher in the Rye' y distopías como 'Nineteen Eighty-Four'.",26/02/1984
+453,Hombre,"Me encantan clásicos como 'The Great Gatsby', fantasías como 'The Hobbit' y distopías como 'Nineteen Eighty-Four'.",23/10/1986
+454,Prefiero no responder,"Amo clásicos como 'The Great Gatsby', reflexiones como 'The Catcher in the Rye' y distopías como 'Nineteen Eighty-Four'.",27/04/1990
+455,Hombre,"Disfruto aventuras como 'Harry Potter', clásicos como 'The Great Gatsby' y thrillers como 'Angels & Demons'.",18/08/1995
+456,Mujer,"Me gustan aventuras como 'Harry Potter', distopías como 'The Giver' y reflexiones como 'Fahrenheit 451'.",25/08/1993
+457,Hombre,"Prefiero distopías como 'The Hunger Games', dramas como 'The Kite Runner' y aventuras como 'Harry Potter'.",27/04/1998
+458,Prefiero no responder,"Disfruto fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",15/11/1987
+459,Mujer,"Me encantan distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",07/03/2002
+460,Hombre,"Amo distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y dramas como 'The Kite Runner'.",12/10/2000
+461,Prefiero no responder,"Disfruto distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y clásicos como 'The Great Gatsby'.",27/06/2004
+462,Mujer,"Me gustan romances como 'Twilight', fantasías como 'The Hobbit' y distopías como 'Animal Farm'.",17/02/1981
+463,Hombre,"Prefiero fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",12/12/1988
+464,Prefiero no responder,"Disfruto distopías como 'Nineteen Eighty-Four', reflexiones como 'The Catcher in the Rye' y thrillers como 'The Da Vinci Code'.",09/03/1980
+465,Hombre,"Me encantan clásicos como 'To Kill a Mockingbird', fantasías como 'The Fellowship of the Ring' y reflexiones como 'Lord of the Flies'.",01/03/1994
+466,Mujer,"Amo distopías como 'The Hunger Games', thrillers como 'Gone Girl' y juveniles como 'The Perks of Being a Wallflower'.",11/09/1999
+467,Prefiero no responder,"Disfruto distopías como 'The Hunger Games', fantasías como 'The Hobbit' y thrillers como 'Män som hatar kvinnor'.",28/08/1996
+468,Mujer,"Me gustan clásicos como 'Pride and Prejudice', reflexiones como 'The Catcher in the Rye' y distopías como 'The Hunger Games'.",04/04/1985
+469,Prefiero no responder,"Prefiero aventuras como 'Harry Potter', distopías como 'Divergent' y thrillers como 'Gone Girl'.",22/06/1997
+470,Hombre,"Disfruto distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y thrillers como 'Män som hatar kvinnor'.",04/12/2001
+471,Mujer,"Me encantan distopías como 'The Hunger Games', juveniles como 'The Fault in Our Stars' y thrillers como 'Gone Girl'.",20/03/1998
+472,Mujer,"Amo romances como 'Twilight', reflexiones como 'O Alquimista' y narrativas como 'The Time Traveler's Wife'.",27/09/1992
+473,Mujer,"Disfruto romances como 'Twilight', clásicos como 'Pride and Prejudice' y thrillers como 'Angels & Demons'.",24/09/2003
+474,Mujer,"Me gustan thrillers como 'The Girl on the Train', juveniles como 'Looking for Alaska' y distopías como 'The Handmaid's Tale'.",15/08/1995
+475,Hombre,"Prefiero clásicos como 'The Great Gatsby', reflexiones como 'The Catcher in the Rye' y distopías como 'Nineteen Eighty-Four'.",24/10/1979
+476,Prefiero no responder,"Disfruto aventuras como 'Harry Potter', juveniles como 'The Fault in Our Stars' y fantasías como 'The Hobbit'.",14/07/2005
+477,Hombre,"Me encantan distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y memorias como 'Het Achterhuis'.",19/08/2000
+478,Mujer,"Amo distopías como 'The Hunger Games', aventuras como 'Harry Potter' y thrillers como 'The Girl on the Train'.",24/07/1997
+479,Hombre,"Disfruto fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",27/02/1986
+480,Mujer,"Me gustan distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",11/11/2004
+481,Prefiero no responder,"Prefiero sátiras como 'Animal Farm', poesía como 'Where the Sidewalk Ends' y fantasías como 'Northern Lights'.",26/01/1991
+482,Hombre,"Disfruto ciencia ficción como 'Dune', humor como 'The Hitchhiker's Guide' y ensayos como 'Freakonomics'.",01/12/1983
+483,Hombre,"Me encantan distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",28/12/2005
+484,Mujer,"Amo romances como 'Twilight', clásicos como 'The Great Gatsby' y dramas como 'The Lovely Bones'.",18/06/1999
+485,Prefiero no responder,"Disfruto fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",03/11/1990
+486,Hombre,"Me gustan clásicos como 'The Great Gatsby', reflexiones como 'The Catcher in the Rye' y distopías como 'Nineteen Eighty-Four'.",05/05/1978
+487,Mujer,"Prefiero distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",06/04/2002
+488,Mujer,"Disfruto fantasías como 'The Hobbit', clásicos como 'Pride and Prejudice' y reflexiones como 'The Catcher in the Rye'.",23/03/1987
+489,Hombre,"Me encantan distopías como 'The Hunger Games', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",24/08/2001
+490,Prefiero no responder,"Amo fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y reflexiones como 'The Catcher in the Rye'.",28/05/1989
+491,Hombre,"Disfruto clásicos como 'The Great Gatsby', fantasías como 'The Hobbit' y dramas como 'The Kite Runner'.",12/10/1984
+492,Mujer,"Me gustan thrillers como 'The Girl on the Train', romances como 'Me Before You' y dramas como 'The Goldfinch'.",27/05/1996
+493,Mujer,"Prefiero distopías como 'The Hunger Games', romances como 'Twilight' y clásicos como 'Pride and Prejudice'.",16/07/2003
+494,Prefiero no responder,"Disfruto aventuras como 'Harry Potter', juveniles como 'The Fault in Our Stars' y reflexiones como 'The Catcher in the Rye'.",07/12/2000
+495,Mujer,"Me encantan clásicos como 'Pride and Prejudice', aventuras como 'Harry Potter' y reflexiones como 'The Catcher in the Rye'.",04/05/1988
+496,Mujer,Amo romances como toda la saga 'Twilight' y 'Fifty Shades Freed'.,22/08/2005
+497,Hombre,"Disfruto clásicos como 'The Great Gatsby', reflexiones como 'The Catcher in the Rye' y distopías como 'Nineteen Eighty-Four'.",04/06/1980
+498,Mujer,"Me gustan clásicos como 'Pride and Prejudice', fantasías como 'The Hobbit' y reflexiones como 'The Catcher in the Rye'.",06/07/1986
+499,Hombre,"Prefiero fantasías como 'The Hobbit', clásicos como 'The Great Gatsby' y dramas como 'The Kite Runner'.",09/07/1997
+500,Mujer,"Disfruto aventuras como 'Harry Potter', romances como 'Twilight' y clásicos como 'The Great Gatsby'.",09/02/2004

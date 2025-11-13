@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bibliobus · Recomendaciones</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="page">
+    <header class="topbar">
+      <div class="brand">Bibliobus</div>
+      <nav class="nav-links">
+        <a href="/catalog">Catálogo</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/recommendations" class="active">Recomendaciones</a>
+        <a href="/ratings">Valorar</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="recomendaciones">
+        <div class="section-heading">
+          <h2>Lecturas recomendadas</h2>
+          <button id="refresh" class="btn-secondary">Actualizar</button>
+        </div>
+        <div id="recs-grid" class="grid"></div>
+        <div id="recs-status" class="muted"></div>
+      </section>
+    </main>
+
+    <script>
+      const FALLBACK_COVER = "/static/placeholder.svg";
+
+      async function fetchJson(url) {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Error al consultar " + url);
+        return response.json();
+      }
+
+      async function loadRecs() {
+        const grid = document.getElementById("recs-grid");
+        const status = document.getElementById("recs-status");
+        grid.innerHTML = "";
+        status.textContent = "Calculando recomendaciones...";
+        try {
+          const recs = await fetchJson("/api/recommendations");
+          if (!recs.length) {
+            status.textContent = "Aún no hay suficientes datos para recomendar.";
+            return;
+          }
+          const details = await Promise.all(
+            recs.map((rec) => fetchJson(`/api/books/${rec.book_id}`).catch(() => null))
+          );
+          grid.innerHTML = "";
+          recs.forEach((rec, index) => {
+            const book = details[index] || {};
+            const card = document.createElement("article");
+            card.className = "card";
+            card.innerHTML = `
+              <div class="muted">#${index + 1}</div>
+              <img src="${book.image_url || FALLBACK_COVER}" alt="Portada recomendada" onerror="this.src='${FALLBACK_COVER}'; this.onerror=null;" />
+              <h3 class="card-title">${rec.title}</h3>
+              <div class="muted">${book.author || ""}</div>
+              <p>Puntuación ${rec.score} · ${rec.ratings} votos</p>
+              <a class="btn-secondary link-button" href="/book?id=${rec.book_id}">Ver detalle</a>
+            `;
+            grid.appendChild(card);
+          });
+          status.textContent = "";
+        } catch (error) {
+          console.error(error);
+          status.textContent = "Error al recuperar las recomendaciones.";
+        }
+      }
+
+      document.getElementById("refresh").addEventListener("click", loadRecs);
+      loadRecs();
+    </script>
+  </body>
+</html>
