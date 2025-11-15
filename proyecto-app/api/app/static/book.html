@@ -37,6 +37,19 @@
         loadBookDetail(bookId);
       }
 
+      function escapeHtml(text) {
+        return text
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function formatComment(text) {
+        return escapeHtml(text).replace(/\n/g, "<br />");
+      }
+
       async function fetchJson(url) {
         const response = await fetch(url);
         if (!response.ok) throw new Error("Error al consultar " + url);
@@ -47,22 +60,30 @@
         const container = document.getElementById("book-detail");
         container.innerHTML = "<span class='muted'>Cargando detalle...</span>";
         try {
-          const [book, copies, ratings] = await Promise.all([
+          const [book, ratings] = await Promise.all([
             fetchJson(`/api/books/${id}`),
-            fetchJson(`/api/books/${id}/copies`),
             fetchJson(`/api/ratings?book_id=${id}`),
           ]);
           const ratingCount = ratings.length;
           const avg = ratingCount ? (ratings.reduce((acc, r) => acc + r.rating, 0) / ratingCount).toFixed(2) : null;
-          const copiesList = copies.map((c) => `<li>Ejemplar #${c.copy_id}</li>`).join("");
+          const commentsList = ratingCount
+            ? ratings
+                .map((r) => {
+                  const humanComment = r.comment
+                    ? `<p class="comment-text">${formatComment(r.comment)}</p>`
+                    : "<p class='comment-text muted'>Sin comentario.</p>";
+                  return `<li><div class="comment-rating">Puntuaci&oacute;n: ${r.rating}/5</div>${humanComment}</li>`;
+                })
+                .join("")
+            : "<li>No hay valoraciones registradas.</li>";
           container.innerHTML = `
             <img src="${book.image_url || FALLBACK_COVER}" alt="Portada" onerror="this.src='${FALLBACK_COVER}'; this.onerror=null;" />
             <h3>${book.title}</h3>
             <p class="muted">${book.author || ""}</p>
-            <p>Idioma: ${book.language || "N/D"} · Año: ${book.published_year || "N/D"}</p>
-            <p>Puntuación media: ${avg ? `${avg} (${ratingCount} votos)` : "Sin valoraciones"}</p>
-            <h4>Ejemplares</h4>
-            <ul>${copiesList || "<li>No hay ejemplares registrados.</li>"}</ul>
+            <p>Idioma: ${book.language || "N/D"} &middot; A&ntilde;o: ${book.published_year || "N/D"}</p>
+            <p>Puntuaci&oacute;n media: ${avg ? `${avg} (${ratingCount} votos)` : "Sin valoraciones"}</p>
+            <h4>Comentarios</h4>
+            <ul class="comment-list">${commentsList}</ul>
           `;
         } catch (error) {
           console.error(error);

@@ -13,6 +13,7 @@ class RatingCreate(BaseModel):
     user_id: int = Field(ge=1)
     copy_id: int = Field(ge=1)
     rating: int = Field(ge=1, le=5)
+    comment: str | None = Field(default=None, max_length=500)
 
 
 class RatingOut(BaseModel):
@@ -20,13 +21,14 @@ class RatingOut(BaseModel):
     user_id: int
     copy_id: int
     rating: int
+    comment: str | None = None
 
 
 @router.post("/", response_model=RatingOut, status_code=201)
 def create_rating(payload: RatingCreate, session: Session = Depends(get_session)):
     service = RatingsService(RatingsRepository(session))
     try:
-        rating = service.add_rating(payload.user_id, payload.copy_id, payload.rating)
+        rating = service.add_rating(payload.user_id, payload.copy_id, payload.rating, payload.comment)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     return rating

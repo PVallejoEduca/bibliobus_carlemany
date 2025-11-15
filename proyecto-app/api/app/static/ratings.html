@@ -20,9 +20,9 @@
       <section id="ratings">
         <h2>Registrar valoración</h2>
         <form id="rating-form" class="filters">
-          <input id="rating-user" type="number" min="1" placeholder="user_id" required />
-          <input id="rating-copy" type="number" min="1" placeholder="copy_id" required />
+          <input id="rating-title" type="text" placeholder="Título del libro" required />
           <input id="rating-score" type="number" min="1" max="5" placeholder="1-5" required />
+          <textarea id="rating-comment" placeholder="Comentario (opcional)"></textarea>
           <button type="submit">Enviar valoración</button>
         </form>
         <div id="rating-status" class="muted"></div>
@@ -30,16 +30,47 @@
     </main>
 
     <script>
+      const FIXED_USER_ID = 1;
+
+      async function findBookByTitle(title) {
+        const response = await fetch(`/api/books/?limit=1&offset=0&q=${encodeURIComponent(title)}`);
+        if (!response.ok) throw new Error("No se pudo buscar el libro.");
+        const data = await response.json();
+        if (!data.items.length) throw new Error("No se encontró un libro con ese título.");
+        return data.items[0];
+      }
+
+      async function pickCopyId(bookId) {
+        const response = await fetch(`/api/books/${bookId}/copies`);
+        if (!response.ok) throw new Error("No se pudo obtener un ejemplar.");
+        const copies = await response.json();
+        if (!copies.length) throw new Error("El libro no tiene ejemplares registrados.");
+        return copies[0].copy_id;
+      }
+
       document.getElementById("rating-form").addEventListener("submit", async (event) => {
         event.preventDefault();
         const status = document.getElementById("rating-status");
-        const payload = {
-          user_id: Number(document.getElementById("rating-user").value),
-          copy_id: Number(document.getElementById("rating-copy").value),
-          rating: Number(document.getElementById("rating-score").value),
-        };
-        status.textContent = "Enviando...";
+        const title = document.getElementById("rating-title").value.trim();
+        const ratingValue = Number(document.getElementById("rating-score").value);
+        if (!title) {
+          status.textContent = "Indica el título del libro.";
+          return;
+        }
+        status.textContent = "Buscando libro...";
         try {
+          const book = await findBookByTitle(title);
+          const copyId = await pickCopyId(book.book_id);
+          const payload = {
+            user_id: FIXED_USER_ID,
+            copy_id: copyId,
+            rating: ratingValue,
+          };
+          const comment = document.getElementById("rating-comment").value.trim();
+          if (comment) {
+            payload.comment = comment;
+          }
+          status.textContent = `Registrando valoración para "${book.title}"...`;
           const response = await fetch("/api/ratings", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -49,7 +80,7 @@
             const error = await response.json();
             throw new Error(error.detail || "No se pudo guardar la valoración");
           }
-          status.textContent = "Valoración registrada. ¡Gracias!";
+          status.textContent = `Valoración registrada para "${book.title}". ¡Gracias!`;
           event.target.reset();
         } catch (error) {
           status.textContent = `Error: ${error.message}`;

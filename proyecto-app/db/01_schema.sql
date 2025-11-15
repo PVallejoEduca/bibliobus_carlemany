@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS lib.ratings (
     user_id INTEGER NOT NULL REFERENCES lib.users (user_id) ON DELETE CASCADE,
     copy_id INTEGER NOT NULL REFERENCES lib.copies (copy_id) ON DELETE CASCADE,
     rating INTEGER NOT NULL,
+    comment TEXT,
     CONSTRAINT rating_range CHECK (rating BETWEEN 1 AND 5),
     CONSTRAINT uq_user_copy UNIQUE (user_id, copy_id)
 );

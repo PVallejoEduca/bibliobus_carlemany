@@ -12,7 +12,6 @@ Aplicación que carga el dataset “Casa de Cultura” en PostgreSQL, expone un 
 proyecto-app/
 ├── db/                # Postgres y scripts SQL
 ├── data/raw/          # CSV originales y limpios
-├── etl/               # Script de carga masiva opcional
 └── api/               # FastAPI + frontend estático
 ```
 
@@ -27,15 +26,11 @@ proyecto-app/
    ```
    Get-Content -Raw 01_schema.sql | docker exec -i bibliobus_db psql -U app -d libdb
    ```
-4. Editar `02_load_data.sql` y dejar descomentados los CSV deseados:
-   - `book_mkp.csv`, `copies_mkp.csv`, etc. → dataset completo (~10k libros)
-   - o bien `books_clean_1.csv` + `copies_clean_1.csv` si se filtra la info
-   - Revisa que `SET datestyle TO 'DMY';` esté al inicio si hay fechas `dd/mm/yyyy`
-5. Cargar datos:
+4. Cargar datos:
    ```
    Get-Content -Raw 02_load_data.sql | docker exec -i bibliobus_db psql -U app -d libdb
    ```
-6. Validar conteos y huérfanos:
+5. Validar conteos y huérfanos:
    ```
    Get-Content -Raw 03_checks.sql | docker exec -i bibliobus_db psql -U app -d libdb
    ```
@@ -76,5 +71,3 @@ pytest
 - `02_load_data.sql` incluye bloques comentados para cargar una versión u otra del dataset.
 - El script `etl/carga.py` (opcional) muestra cómo automatizar validaciones y cargas con pandas/psycopg.
 - Cuando se cambie la fuente de datos, repetir `01_schema.sql` + `02_load_data.sql`.
-
-Con esto cualquier compañero puede levantar la BD, cargar los CSV apropiados y ejecutar la app en local. ¡Listo para subir a GitHub!***

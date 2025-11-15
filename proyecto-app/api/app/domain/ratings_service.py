@@ -7,7 +7,7 @@ class RatingsService:
     def __init__(self, repo: RatingsRepository):
         self.repo = repo
 
-    def add_rating(self, user_id: int, copy_id: int, rating: int):
+    def add_rating(self, user_id: int, copy_id: int, rating: int, comment: str | None = None):
         if rating < 1 or rating > 5:
             raise ValueError("rating_fuera_de_rango")
         if not self.repo.user_exists(user_id):
@@ -16,12 +16,13 @@ class RatingsService:
             raise ValueError("copy_inexistente")
         if self.repo.get_rating(user_id, copy_id):
             raise ValueError("rating_duplicado")
-        rating_obj = self.repo.create_rating(user_id, copy_id, rating)
+        rating_obj = self.repo.create_rating(user_id, copy_id, rating, comment)
         return {
             "rating_id": rating_obj.rating_id,
             "user_id": rating_obj.user_id,
             "copy_id": rating_obj.copy_id,
             "rating": rating_obj.rating,
+            "comment": rating_obj.comment,
         }
 
     def list_ratings(self, book_id: int | None = None, user_id: int | None = None):
@@ -32,6 +33,7 @@ class RatingsService:
                 "user_id": r.user_id,
                 "copy_id": r.copy_id,
                 "rating": r.rating,
+                "comment": r.comment,
             }
             for r in ratings
         ]

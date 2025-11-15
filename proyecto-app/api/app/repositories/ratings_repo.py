@@ -23,8 +23,13 @@ class RatingsRepository:
     def user_exists(self, user_id: int) -> bool:
         return self.session.get(models.User, user_id) is not None
 
-    def create_rating(self, user_id: int, copy_id: int, rating: int):
-        rating_obj = models.Rating(user_id=user_id, copy_id=copy_id, rating=rating)
+    def create_rating(self, user_id: int, copy_id: int, rating: int, comment: str | None = None):
+        rating_obj = models.Rating(
+            user_id=user_id,
+            copy_id=copy_id,
+            rating=rating,
+            comment=comment,
+        )
         self.session.add(rating_obj)
         self.session.flush()
         return rating_obj
@@ -61,7 +66,7 @@ class RatingsRepository:
         counts["orphan_ratings"] = self.session.execute(orphan_ratings_stmt).scalar_one()
         return counts
 
-    def rating_stats(self):
+    def rating_stats(self, limit: int | None = 100):
         stmt = (
             select(
                 models.Book.book_id,
@@ -73,6 +78,7 @@ class RatingsRepository:
             .join(models.Rating, models.Rating.copy_id == models.Copy.copy_id)
             .group_by(models.Book.book_id, models.Book.title)
             .order_by(func.count(models.Rating.rating_id).desc())
-            .limit(15)
         )
+        if limit is not None:
+            stmt = stmt.limit(limit)
         return self.session.execute(stmt).all()

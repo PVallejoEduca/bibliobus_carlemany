@@ -20,10 +20,19 @@
       <section id="recomendaciones">
         <div class="section-heading">
           <h2>Lecturas recomendadas</h2>
-          <button id="refresh" class="btn-secondary">Actualizar</button>
+          <div class="segment-control">
+            <button id="tab-global" class="btn-secondary active">Top global</button>
+            <button id="tab-hidden" class="btn-secondary">Joyas ocultas</button>
+          </div>
         </div>
+        <p id="section-note" class="muted section-note"></p>
         <div id="recs-grid" class="grid"></div>
         <div id="recs-status" class="muted"></div>
+        <div id="recs-pager" class="pager" style="display:none;">
+          <button id="pager-prev" class="btn-secondary">Anterior</button>
+          <span id="pager-page-info" class="muted"></span>
+          <button id="pager-next" class="btn-secondary">Siguiente</button>
+        </div>
       </section>
     </main>
 
@@ -36,35 +45,52 @@
         return response.json();
       }
 
-      async function loadRecs() {
-        const grid = document.getElementById("recs-grid");
-        const status = document.getElementById("recs-status");
+      async function enrichBooks(recs) {
+        return Promise.all(
+          recs.map(async (rec) => {
+            const book = await fetchJson(`/api/books/${rec.book_id}`).catch(() => null);
+            return { rec, book: book || {} };
+          })
+        );
+      }
+
+      function renderCards(grid, entries, scoreLabel, startIndex = 0) {
         grid.innerHTML = "";
-        status.textContent = "Calculando recomendaciones...";
+        entries.forEach(({ rec, book }, index) => {
+          const card = document.createElement("article");
+          card.className = "card";
+          card.innerHTML = `
+            <div class="muted">#${startIndex + index + 1}</div>
+            <img src="${book.image_url || FALLBACK_COVER}" alt="Portada recomendada" onerror="this.src='${FALLBACK_COVER}'; this.onerror=null;" />
+            <h3 class="card-title">${rec.title}</h3>
+            <div class="muted">${book.author || ""}</div>
+            <p>${scoreLabel}: ${rec.score} · ${rec.ratings} votos</p>
+            <a class="btn-secondary link-button" href="/book?id=${rec.book_id}">Ver detalle</a>
+          `;
+          grid.appendChild(card);
+        });
+      }
+
+      async function loadSection({ request, gridId, statusId, loadingMessage, emptyMessage, scoreLabel, onMeta }) {
+        const grid = document.getElementById(gridId);
+        const status = document.getElementById(statusId);
+        grid.innerHTML = "";
+        status.textContent = loadingMessage;
         try {
-          const recs = await fetchJson("/api/recommendations");
+          const data = await request();
+          const recs = Array.isArray(data) ? data : data.items || [];
+          const meta = Array.isArray(data)
+            ? { total: recs.length, limit: recs.length || 1, offset: 0 }
+            : data;
+          if (onMeta) {
+            onMeta(meta);
+          }
           if (!recs.length) {
-            status.textContent = "Aún no hay suficientes datos para recomendar.";
+            status.textContent = emptyMessage;
             return;
           }
-          const details = await Promise.all(
-            recs.map((rec) => fetchJson(`/api/books/${rec.book_id}`).catch(() => null))
-          );
-          grid.innerHTML = "";
-          recs.forEach((rec, index) => {
-            const book = details[index] || {};
-            const card = document.createElement("article");
-            card.className = "card";
-            card.innerHTML = `
-              <div class="muted">#${index + 1}</div>
-              <img src="${book.image_url || FALLBACK_COVER}" alt="Portada recomendada" onerror="this.src='${FALLBACK_COVER}'; this.onerror=null;" />
-              <h3 class="card-title">${rec.title}</h3>
-              <div class="muted">${book.author || ""}</div>
-              <p>Puntuación ${rec.score} · ${rec.ratings} votos</p>
-              <a class="btn-secondary link-button" href="/book?id=${rec.book_id}">Ver detalle</a>
-            `;
-            grid.appendChild(card);
-          });
+          const enriched = await enrichBooks(recs);
+          renderCards(grid, enriched, scoreLabel, meta.offset || 0);
           status.textContent = "";
         } catch (error) {
           console.error(error);
@@ -72,8 +98,99 @@
         }
       }
 
-      document.getElementById("refresh").addEventListener("click", loadRecs);
-      loadRecs();
+      const viewState = {
+        global: { page: 1, limit: 9, totalPages: 1, note: "" },
+        hidden: { page: 1, limit: 9, totalPages: 1, note: "Libros con gran nota media pese a tener pocas valoraciones." },
+      };
+      let currentView = "global";
+
+      function updatePager(view, meta) {
+        const pager = document.getElementById("recs-pager");
+        const info = document.getElementById("pager-page-info");
+        const total = meta.total || 0;
+        const limit = viewState[view].limit;
+        const offset = meta.offset || 0;
+        if (!total || total <= limit) {
+          pager.style.display = "none";
+          viewState[view].totalPages = 1;
+          viewState[view].page = Math.min(1, meta.page || 1);
+          info.textContent = "";
+          return;
+        }
+        const totalPages = Math.max(1, Math.ceil(total / limit));
+        const currentPage = Math.min(totalPages, Math.floor(offset / limit) + 1);
+        viewState[view].totalPages = totalPages;
+        viewState[view].page = currentPage;
+        pager.style.display = "block";
+        info.textContent = `${currentPage} / ${totalPages}`;
+        document.getElementById("pager-prev").disabled = currentPage <= 1;
+        document.getElementById("pager-next").disabled = currentPage >= totalPages;
+      }
+
+      function loadGlobal(page = viewState.global.page) {
+        document.getElementById("section-note").textContent = viewState.global.note;
+        const params = new URLSearchParams({ limit: viewState.global.limit, page: String(page) });
+        loadSection({
+          request: () => fetchJson(`/api/recommendations?${params}`),
+          gridId: "recs-grid",
+          statusId: "recs-status",
+          loadingMessage: "Calculando recomendaciones...",
+          emptyMessage: "Aún no hay suficientes datos para recomendar.",
+          scoreLabel: "Puntuación ponderada",
+          onMeta: (meta) => updatePager("global", meta),
+        });
+      }
+
+      function loadHidden(page = viewState.hidden.page) {
+        document.getElementById("section-note").textContent = viewState.hidden.note;
+        const params = new URLSearchParams({ limit: viewState.hidden.limit, page: String(page) });
+        loadSection({
+          request: () => fetchJson(`/api/recommendations/hidden?${params}`),
+          gridId: "recs-grid",
+          statusId: "recs-status",
+          loadingMessage: "Buscando joyas ocultas...",
+          emptyMessage: "Todavía no hay registros suficientes para mostrar joyas ocultas.",
+          scoreLabel: "Nota media",
+          onMeta: (meta) => updatePager("hidden", meta),
+        });
+      }
+
+      function setActiveTab(tab) {
+        document.getElementById("tab-global").classList.toggle("active", tab === "global");
+        document.getElementById("tab-hidden").classList.toggle("active", tab === "hidden");
+      }
+
+      function loadView(tab, resetPage = false) {
+        currentView = tab;
+        setActiveTab(tab);
+        if (resetPage) {
+          viewState[tab].page = 1;
+        }
+        if (tab === "global") {
+          loadGlobal(viewState.global.page);
+        } else {
+          loadHidden(viewState.hidden.page);
+        }
+      }
+
+      document.getElementById("tab-global").addEventListener("click", () => loadView("global", true));
+      document.getElementById("tab-hidden").addEventListener("click", () => loadView("hidden", true));
+      document.getElementById("pager-prev").addEventListener("click", () => {
+        const state = viewState[currentView];
+        if (state.page > 1) {
+          state.page -= 1;
+          loadView(currentView);
+        }
+      });
+      document.getElementById("pager-next").addEventListener("click", () => {
+        const state = viewState[currentView];
+        if (state.page < state.totalPages) {
+          state.page += 1;
+          loadView(currentView);
+        }
+      });
+      document.getElementById("section-note").textContent = "";
+      loadView("global", true);
     </script>
   </body>
 </html>

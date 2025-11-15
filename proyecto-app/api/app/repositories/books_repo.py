@@ -15,14 +15,15 @@ class BooksRepository:
             stmt = stmt.where(
                 or_(
                     models.Book.title.ilike(pattern),
-                    models.Book.author.ilike(pattern),
-                    models.Book.category.ilike(pattern),
+                    models.Book.authors.ilike(pattern),
+                    models.Book.original_title.ilike(pattern),
                 )
             )
         if language:
-            stmt = stmt.where(models.Book.language == language)
+            stmt = stmt.where(models.Book.language_code == language)
         if category:
-            stmt = stmt.where(models.Book.category == category)
+            # Schema actual no tiene columna de categoría; se ignora filtro para compatibilidad
+            pass
         return stmt
 
     def list_books(self, limit: int, offset: int, query: str | None, language: str | None, category: str | None):

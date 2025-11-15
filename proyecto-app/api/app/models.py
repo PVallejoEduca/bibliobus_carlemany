@@ -50,6 +50,7 @@ class Rating(Base):
     user_id: Mapped[int] = mapped_column(ForeignKey("users.user_id", ondelete="CASCADE"), nullable=False)
     copy_id: Mapped[int] = mapped_column(ForeignKey("copies.copy_id", ondelete="CASCADE"), nullable=False)
     rating: Mapped[int] = mapped_column(SmallInteger, nullable=False)
+    comment: Mapped[str | None] = mapped_column(Text)
 
     user: Mapped[User] = relationship(back_populates="ratings")
     copy: Mapped[Copy] = relationship(back_populates="ratings")
