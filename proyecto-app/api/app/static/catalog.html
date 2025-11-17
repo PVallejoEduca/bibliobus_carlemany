@@ -12,7 +12,12 @@
         <a href="/catalog" class="active">Catálogo</a>
         <a href="/dashboard">Dashboard</a>
         <a href="/recommendations">Recomendaciones</a>
-        <a href="/ratings">Valorar</a>
+        <a href="/ratings" data-auth-required>Valorar</a>
+        <a href="/profile" class="nav-avatar hidden" data-profile-link title="Perfil">
+          <span class="avatar-icon"></span>
+        </a>
+        <button type="button" class="btn-secondary nav-logout hidden" data-logout>Salir</button>
+        <a href="/login" data-login-link>Login</a>
       </nav>
     </header>
 
@@ -32,6 +37,7 @@
       </section>
     </main>
 
+    <script src="/static/app.js"></script>
     <script>
       const FALLBACK_COVER = "/static/placeholder.svg";
       const state = { offset: 0, limit: 12, total: 0 };

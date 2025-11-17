@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bibliobus - Perfil</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="page">
+    <header class="topbar">
+      <div class="brand">Bibliobus</div>
+      <nav class="nav-links">
+        <a href="/catalog">Catálogo</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/recommendations">Recomendaciones</a>
+        <a href="/ratings" data-auth-required>Valorar</a>
+        <a href="/profile" class="nav-avatar hidden" data-profile-link title="Perfil">
+          <span class="avatar-icon"></span>
+        </a>
+        <button type="button" class="btn-secondary nav-logout hidden" data-logout>Salir</button>
+        <a href="/login" data-login-link>Login</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Mi perfil</h2>
+        <div id="profile-status" class="muted">Cargando datos...</div>
+        <dl id="profile-data" class="profile-data hidden"></dl>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+    <script>
+      const auth = window.BibliobusAuth;
+      const statusEl = document.getElementById("profile-status");
+      const dataEl = document.getElementById("profile-data");
+
+      const user = auth?.getUser();
+      if (!user) {
+        statusEl.textContent = "Inicia sesión para acceder a tu perfil.";
+      } else {
+        loadProfile(user.user_id);
+      }
+
+      async function loadProfile(userId) {
+        statusEl.textContent = "Cargando datos...";
+        try {
+          const response = await fetch(`/api/users/${userId}`);
+          if (!response.ok) {
+            throw new Error("No se pudo obtener la información del usuario.");
+          }
+          const data = await response.json();
+          renderProfile(data);
+        } catch (error) {
+          statusEl.textContent = error.message;
+        }
+      }
+
+      function renderProfile(data) {
+        statusEl.classList.add("hidden");
+        dataEl.classList.remove("hidden");
+        dataEl.innerHTML = `
+          <dt>Sexo</dt>
+          <dd>${data.full_name || "Sin datos"}</dd>
+          <dt>Nik Name</dt>
+          <dd>${data.nickname || "Sin alias"}</dd>
+          <dt>Descripción</dt>
+          <dd>${data.email || "Sin email"}</dd>
+          <dt>Fecha nacimiento</dt>
+          <dd>${data.member_since || "No registrado"}</dd>
+        `;
+      }
+    </script>
+  </body>
+</html>

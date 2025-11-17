@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bibliobus - Login</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body class="page">
+    <header class="topbar">
+      <div class="brand">Bibliobus</div>
+      <nav class="nav-links">
+        <a href="/catalog">Catálogo</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/recommendations">Recomendaciones</a>
+        <a href="/ratings" data-auth-required>Valorar</a>
+        <a href="/profile" class="nav-avatar hidden" data-profile-link title="Perfil">
+          <span class="avatar-icon"></span>
+        </a>
+        <button type="button" class="btn-secondary nav-logout hidden" data-logout>Salir</button>
+        <a href="/login" class="active" data-login-link>Login</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="auth-card card">
+        <h2>Iniciar sesión</h2>
+        <p id="login-description" class="muted">
+          Introduce tu usuario y contraseña para identificarte antes de valorar.
+        </p>
+        <form id="login-form" class="auth-form">
+          <input id="login-nickname" type="text" placeholder="Usuario" required />
+          <input id="login-password" type="password" placeholder="Contraseña" required />
+          <button type="submit">Acceder</button>
+        </form>
+        <div id="login-status" class="muted auth-status"></div>
+        <div id="logged-panel" class="hidden">
+          <p>
+            Ya has iniciado sesión como <strong id="logged-name"></strong>.
+          </p>
+          <div class="auth-actions">
+            <button type="button" id="logout-btn" class="btn-secondary">Cerrar sesión</button>
+            <a href="/ratings" class="btn-secondary link-button">Ir a valorar</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+    <script>
+      const auth = window.BibliobusAuth;
+      const form = document.getElementById("login-form");
+      const status = document.getElementById("login-status");
+      const description = document.getElementById("login-description");
+      const loggedPanel = document.getElementById("logged-panel");
+      const loggedName = document.getElementById("logged-name");
+      const logoutBtn = document.getElementById("logout-btn");
+
+      function currentUser() {
+        return auth?.getUser();
+      }
+
+      function renderState() {
+        const user = currentUser();
+        if (user) {
+          form.classList.add("hidden");
+          loggedPanel.classList.remove("hidden");
+          loggedName.textContent = user.full_name || user.nickname;
+          description.textContent = "Sesión iniciada correctamente.";
+          status.textContent = "";
+        } else {
+          form.classList.remove("hidden");
+          loggedPanel.classList.add("hidden");
+          description.textContent = "Introduce tu usuario y contraseña para identificarte antes de valorar.";
+          status.textContent = "";
+          form.reset();
+        }
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const nickname = document.getElementById("login-nickname").value.trim();
+        const password = document.getElementById("login-password").value;
+        if (!nickname || !password) {
+          status.textContent = "Completa usuario y contraseña.";
+          return;
+        }
+        status.textContent = "Validando credenciales...";
+        try {
+          const response = await fetch("/api/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nickname, password }),
+            credentials: "same-origin",
+          });
+          if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(error.detail || "Credenciales inválidas");
+          }
+          const data = await response.json();
+          auth?.setUser(data);
+          status.textContent = "Bienvenido, redirigiendo...";
+          renderState();
+          setTimeout(() => {
+            window.location.href = "/ratings";
+          }, 1200);
+        } catch (error) {
+          status.textContent = `Error: ${error.message}`;
+        }
+      });
+
+      logoutBtn.addEventListener("click", async () => {
+        try {
+          await fetch("/api/auth/logout", { method: "POST", credentials: "same-origin" });
+        } catch (error) {
+          console.warn("No se pudo cerrar sesión en el servidor", error);
+        }
+        auth?.clearUser();
+        status.textContent = "Sesión cerrada.";
+        renderState();
+      });
+
+      renderState();
+    </script>
+  </body>
+</html>

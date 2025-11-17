@@ -24,6 +24,12 @@ CREATE TABLE IF NOT EXISTS lib.users (
     member_since DATE
 );
 
+CREATE TABLE IF NOT EXISTS lib.user_logins (
+    user_id INTEGER PRIMARY KEY REFERENCES lib.users (user_id) ON DELETE CASCADE,
+    nickname TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS lib.ratings (
     rating_id SERIAL PRIMARY KEY,
     user_id INTEGER NOT NULL REFERENCES lib.users (user_id) ON DELETE CASCADE,

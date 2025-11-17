@@ -12,41 +12,165 @@
         <a href="/catalog">Catálogo</a>
         <a href="/dashboard" class="active">Dashboard</a>
         <a href="/recommendations">Recomendaciones</a>
-        <a href="/ratings">Valorar</a>
+        <a href="/ratings" data-auth-required>Valorar</a>
+        <a href="/profile" class="nav-avatar hidden" data-profile-link title="Perfil">
+          <span class="avatar-icon"></span>
+        </a>
+        <button type="button" class="btn-secondary nav-logout hidden" data-logout>Salir</button>
+        <a href="/login" data-login-link>Login</a>
       </nav>
     </header>
 
     <main>
-      <section id="dashboard">
-        <h2>Panel de indicadores</h2>
-        <ul id="kpis"></ul>
+      <section class="kpi-section">
+        <div class="section-heading">
+          <h2>Resumen de la biblioteca</h2>
+          <button id="refresh-kpis" class="btn-secondary">Actualizar</button>
+        </div>
+        <div id="kpi-grid" class="kpi-grid"></div>
+        <div id="kpi-status" class="muted"></div>
+      </section>
+
+      <section class="kpi-section">
+        <div class="section-heading">
+          <h2>Indicadores simulados</h2>
+          <span class="muted">Valores inventados para completar la demo.</span>
+        </div>
+        <div id="placeholder-grid" class="kpi-grid"></div>
       </section>
     </main>
 
+    <script src="/static/app.js"></script>
     <script>
+      const KPI_CARDS = [
+        { key: "books", label: "Libros disponibles", icon: "📚", accent: "#3b82f6" },
+        { key: "copies", label: "Ejemplares totales", icon: "📦", accent: "#22d3ee" },
+        { key: "users", label: "Usuarios registrados", icon: "👥", accent: "#f472b6" },
+        { key: "ratings", label: "Valoraciones registradas", icon: "⭐", accent: "#facc15" },
+        { key: "avg_copies_per_book", label: "Ejemplares por libro", icon: "📊", accent: "#a78bfa" },
+        { key: "avg_ratings_per_user", label: "Valoraciones por usuario", icon: "🧑‍💻", accent: "#f87171" },
+        {
+          key: "avgRatings",
+          label: "Valoraciones por libro",
+          icon: "📈",
+          accent: "#34d399",
+          compute: (kpis) =>
+            kpis.avg_ratings_per_book ?? (kpis.books ? (kpis.ratings / kpis.books).toFixed(2) : "0"),
+        },
+        {
+          key: "activity",
+          label: "Ejemplares sin libro / Valoraciones sin ejemplar",
+          icon: "🛠️",
+          accent: "#f97316",
+          compute: (kpis) => `${kpis.orphan_copies || 0} / ${kpis.orphan_ratings || 0}`,
+        },
+      ];
+
+      const PLACEHOLDER_DATA = [
+        {
+          icon: "⚠️",
+          title: "Usuarios con strikes",
+          value: "3",
+          note: "Dato inventado para la demo",
+        },
+        {
+          icon: "📝",
+          title: "Valoraciones en moderación",
+          value: "7",
+          note: "Dato inventado para la demo",
+        },
+        {
+          icon: "📅",
+          title: "Eventos programados del bibliobús",
+          value: "12",
+          note: "Indica próximas paradas, pendiente implementar",
+        },
+        {
+          icon: "📨",
+          title: "Solicitudes de préstamo",
+          value: "24",
+          note: "Solicitudes web aún no conectadas",
+        },
+        {
+          icon: "💬",
+          title: "Mensajes de contacto sin leer",
+          value: "5",
+          note: "Módulo de soporte en desarrollo",
+        },
+        {
+          icon: "⭐",
+          title: "Libros destacados por comunidad",
+          value: "8",
+          note: "Basado en un ranking futuro",
+        },
+      ];
+
+      function formatNumber(value) {
+        const number = Number(value);
+        if (Number.isNaN(number)) {
+          return value;
+        }
+        return number.toLocaleString("es-ES");
+      }
+
       async function fetchJson(url) {
         const response = await fetch(url);
         if (!response.ok) throw new Error("Error al consultar " + url);
         return response.json();
       }
 
+      function renderCards(kpis) {
+        const grid = document.getElementById("kpi-grid");
+        grid.innerHTML = "";
+        KPI_CARDS.forEach((card) => {
+          const value = card.compute ? card.compute(kpis) : kpis[card.key] ?? 0;
+          const article = document.createElement("article");
+          article.className = "kpi-card";
+          article.style.setProperty("--accent-color", card.accent);
+          article.innerHTML = `
+            <div class="kpi-icon">${card.icon}</div>
+            <div class="kpi-value">${formatNumber(value)}</div>
+            <div class="kpi-label">${card.label}</div>
+          `;
+          grid.appendChild(article);
+        });
+      }
+
+      function renderPlaceholderCards() {
+        const grid = document.getElementById("placeholder-grid");
+        grid.innerHTML = "";
+        PLACEHOLDER_DATA.forEach((item) => {
+          const article = document.createElement("article");
+          article.className = "kpi-card";
+          article.style.setProperty("--accent-color", "#cbd5f5");
+          article.innerHTML = `
+            <div class="kpi-icon">${item.icon}</div>
+            <div class="kpi-value">${item.value}</div>
+            <div class="kpi-label">${item.title}</div>
+            <small class="muted">${item.note}</small>
+          `;
+          grid.appendChild(article);
+        });
+      }
+
       async function loadKpis() {
-        const list = document.getElementById("kpis");
-        list.innerHTML = "<li class='muted'>Cargando KPIs...</li>";
+        const status = document.getElementById("kpi-status");
+        const grid = document.getElementById("kpi-grid");
+        status.textContent = "Cargando indicadores...";
+        grid.innerHTML = "";
         try {
           const kpis = await fetchJson("/api/kpis");
-          list.innerHTML = "";
-          Object.entries(kpis).forEach(([name, value]) => {
-            const item = document.createElement("li");
-            item.textContent = `${name}: ${value}`;
-            list.appendChild(item);
-          });
+          renderCards(kpis);
+          status.textContent = "Actualizado ahora mismo.";
         } catch (error) {
-          list.innerHTML = "<li class='muted'>Error al recuperar los KPIs.</li>";
+          console.error(error);
+          status.textContent = "No se pudieron obtener los KPIs.";
         }
       }
 
+      document.getElementById("refresh-kpis").addEventListener("click", loadKpis);
       loadKpis();
+      renderPlaceholderCards();
     </script>
   </body>
 </html>

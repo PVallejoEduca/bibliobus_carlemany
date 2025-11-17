@@ -64,6 +64,9 @@ class RatingsRepository:
         )
         counts["orphan_copies"] = self.session.execute(orphan_copies_stmt).scalar_one()
         counts["orphan_ratings"] = self.session.execute(orphan_ratings_stmt).scalar_one()
+        counts["avg_copies_per_book"] = round(counts["copies"] / counts["books"], 2) if counts["books"] else 0
+        counts["avg_ratings_per_user"] = round(counts["ratings"] / counts["users"], 2) if counts["users"] else 0
+        counts["avg_ratings_per_book"] = round(counts["ratings"] / counts["books"], 2) if counts["books"] else 0
         return counts
 
     def rating_stats(self, limit: int | None = 100):

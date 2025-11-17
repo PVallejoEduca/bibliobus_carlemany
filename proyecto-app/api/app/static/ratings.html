@@ -12,7 +12,12 @@
         <a href="/catalog">Catálogo</a>
         <a href="/dashboard">Dashboard</a>
         <a href="/recommendations">Recomendaciones</a>
-        <a href="/ratings" class="active">Valorar</a>
+        <a href="/ratings" class="active" data-auth-required>Valorar</a>
+        <a href="/profile" class="nav-avatar hidden" data-profile-link title="Perfil">
+          <span class="avatar-icon"></span>
+        </a>
+        <button type="button" class="btn-secondary nav-logout hidden" data-logout>Salir</button>
+        <a href="/login" data-login-link>Login</a>
       </nav>
     </header>
 
@@ -29,8 +34,19 @@
       </section>
     </main>
 
+    <script src="/static/app.js"></script>
     <script>
-      const FIXED_USER_ID = 1;
+      const auth = window.BibliobusAuth;
+      const currentUser = auth?.getUser();
+      const form = document.getElementById("rating-form");
+      const status = document.getElementById("rating-status");
+
+      if (!currentUser) {
+        status.textContent = "Debes iniciar sesión para registrar una valoración.";
+        form.classList.add("hidden");
+      } else {
+        initRatingForm();
+      }
 
       async function findBookByTitle(title) {
         const response = await fetch(`/api/books/?limit=1&offset=0&q=${encodeURIComponent(title)}`);
@@ -48,9 +64,14 @@
         return copies[0].copy_id;
       }
 
-      document.getElementById("rating-form").addEventListener("submit", async (event) => {
+      function initRatingForm() {
+        form.classList.remove("hidden");
+        status.textContent = "";
+        form.addEventListener("submit", handleSubmit);
+      }
+
+      async function handleSubmit(event) {
         event.preventDefault();
-        const status = document.getElementById("rating-status");
         const title = document.getElementById("rating-title").value.trim();
         const ratingValue = Number(document.getElementById("rating-score").value);
         if (!title) {
@@ -62,7 +83,6 @@
           const book = await findBookByTitle(title);
           const copyId = await pickCopyId(book.book_id);
           const payload = {
-            user_id: FIXED_USER_ID,
             copy_id: copyId,
             rating: ratingValue,
           };
@@ -85,7 +105,7 @@
         } catch (error) {
           status.textContent = `Error: ${error.message}`;
         }
-      });
+      }
     </script>
   </body>
 </html>

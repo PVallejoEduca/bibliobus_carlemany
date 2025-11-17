@@ -1,4 +1,4 @@
-TRUNCATE lib.ratings, lib.copies, lib.user_info, lib.books RESTART IDENTITY CASCADE;
+TRUNCATE lib.ratings, lib.user_logins, lib.copies, lib.user_info, lib.books RESTART IDENTITY CASCADE;
 SET datestyle TO 'DMY';
 
 -- COPY lib.books (isbn, authors, original_publication_year, original_title, title, language_code, book_id, image_url)
@@ -7,6 +7,10 @@ SET datestyle TO 'DMY';
 
 -- COPY lib.users (user_id, full_name, email, member_since)
 -- FROM '/data/raw/user_info_mkp.csv'
+-- WITH (FORMAT csv, HEADER true);
+
+-- COPY lib.user_logins (user_id, nickname, password_hash)
+-- FROM '/data/raw/user_login.csv'
 -- WITH (FORMAT csv, HEADER true);
 
 -- COPY lib.copies (copy_id, book_id)
@@ -24,6 +28,10 @@ WITH (FORMAT csv, HEADER true);
 
 COPY lib.users (user_id, full_name, email, member_since)
 FROM '/data/raw/user_info_clean_1.csv'
+WITH (FORMAT csv, HEADER true);
+
+COPY lib.user_logins (user_id, nickname, password_hash)
+FROM '/data/raw/user_login.csv'
 WITH (FORMAT csv, HEADER true);
 
 COPY lib.copies (copy_id, book_id)

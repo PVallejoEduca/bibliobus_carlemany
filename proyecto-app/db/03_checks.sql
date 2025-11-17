@@ -4,6 +4,8 @@ SELECT 'copies', COUNT(*) FROM lib.copies
 UNION ALL
 SELECT 'users', COUNT(*) FROM lib.users
 UNION ALL
+SELECT 'user_logins', COUNT(*) FROM lib.user_logins
+UNION ALL
 SELECT 'ratings', COUNT(*) FROM lib.ratings;
 
 SELECT c.*
@@ -21,13 +23,7 @@ FROM lib.ratings r
 LEFT JOIN lib.users u ON u.user_id = r.user_id
 WHERE u.user_id IS NULL;
 
-SELECT b.title,
-        COUNT(*) AS votos,
-        AVG(r.rating) AS media
- FROM lib.books b
- JOIN lib.copies c ON c.book_id = b.book_id
- JOIN lib.ratings r ON r.copy_id = c.copy_id
- GROUP BY b.title
- HAVING COUNT(*) BETWEEN 1 AND 10
-    AND AVG(r.rating) >= 4.5
- ORDER BY media DESC;
+SELECT l.*
+FROM lib.user_logins l
+LEFT JOIN lib.users u ON u.user_id = l.user_id
+WHERE u.user_id IS NULL;

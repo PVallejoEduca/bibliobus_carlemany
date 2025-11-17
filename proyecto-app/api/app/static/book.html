@@ -12,7 +12,12 @@
         <a href="/catalog">Catálogo</a>
         <a href="/dashboard">Dashboard</a>
         <a href="/recommendations">Recomendaciones</a>
-        <a href="/ratings">Valorar</a>
+        <a href="/ratings" data-auth-required>Valorar</a>
+        <a href="/profile" class="nav-avatar hidden" data-profile-link title="Perfil">
+          <span class="avatar-icon"></span>
+        </a>
+        <button type="button" class="btn-secondary nav-logout hidden" data-logout>Salir</button>
+        <a href="/login" data-login-link>Login</a>
       </nav>
     </header>
 
@@ -26,6 +31,7 @@
       </section>
     </main>
 
+    <script src="/static/app.js"></script>
     <script>
       const FALLBACK_COVER = "/static/placeholder.svg";
       const params = new URLSearchParams(window.location.search);
@@ -72,18 +78,48 @@
                   const humanComment = r.comment
                     ? `<p class="comment-text">${formatComment(r.comment)}</p>`
                     : "<p class='comment-text muted'>Sin comentario.</p>";
-                  return `<li><div class="comment-rating">Puntuaci&oacute;n: ${r.rating}/5</div>${humanComment}</li>`;
+                  return `<article class="comment-card"><div class="comment-header">Puntuaci&oacute;n <strong>${r.rating}/5</strong></div>${humanComment}</article>`;
                 })
                 .join("")
-            : "<li>No hay valoraciones registradas.</li>";
+            : "<p class='muted'>No hay valoraciones registradas.</p>";
           container.innerHTML = `
-            <img src="${book.image_url || FALLBACK_COVER}" alt="Portada" onerror="this.src='${FALLBACK_COVER}'; this.onerror=null;" />
-            <h3>${book.title}</h3>
-            <p class="muted">${book.author || ""}</p>
-            <p>Idioma: ${book.language || "N/D"} &middot; A&ntilde;o: ${book.published_year || "N/D"}</p>
-            <p>Puntuaci&oacute;n media: ${avg ? `${avg} (${ratingCount} votos)` : "Sin valoraciones"}</p>
-            <h4>Comentarios</h4>
-            <ul class="comment-list">${commentsList}</ul>
+            <div class="book-hero">
+              <div class="book-cover">
+                <img src="${book.image_url || FALLBACK_COVER}" alt="Portada" onerror="this.src='${FALLBACK_COVER}'; this.onerror=null;" />
+              </div>
+              <div class="book-info">
+                <h3>${book.title}</h3>
+                <p class="muted">${book.author || "Autor desconocido"}</p>
+                <div class="book-tags">
+                  <span class="tag">${book.language || "Idioma N/D"}</span>
+                  <span class="tag">${book.published_year || "Año N/D"}</span>
+                </div>
+                <dl class="book-stats">
+                  <div>
+                    <dt>Puntuaci&oacute;n media</dt>
+                    <dd>${avg ? `${avg}/5` : "Sin datos"}</dd>
+                  </div>
+                  <div>
+                    <dt>Valoraciones</dt>
+                    <dd>${ratingCount}</dd>
+                  </div>
+                  <div>
+                    <dt>ID libro</dt>
+                    <dd>#${book.book_id}</dd>
+                  </div>
+                </dl>
+                <p class="book-description">
+                  Idioma: ${book.language || "N/D"} &middot; A&ntilde;o: ${book.published_year || "N/D"}
+                </p>
+              </div>
+            </div>
+            <div class="comments-section">
+              <div class="section-heading">
+                <h4>Comentarios</h4>
+                <span class="muted">${ratingCount ? `${ratingCount} valoraciones` : ""}</span>
+              </div>
+              <div class="comment-list">${commentsList}</div>
+            </div>
           `;
         } catch (error) {
           console.error(error);

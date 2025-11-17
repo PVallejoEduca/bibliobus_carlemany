@@ -67,11 +67,7 @@ pytest
 
 ## 5. Notas
 
-- Los CSV “clean” deben contener IDs consistentes: si se reduce el catálogo, limpiar también `copies_clean_1.csv` y `ratings_clean_1.csv`.
-- `02_load_data.sql` incluye bloques comentados para cargar una versión u otra del dataset.
-- El script `etl/carga.py` (opcional) muestra cómo automatizar validaciones y cargas con pandas/psycopg.
-<<<<<<< HEAD
-- Cuando se cambie la fuente de datos, repetir `01_schema.sql` + `02_load_data.sql`.
-=======
-- Cuando se cambie la fuente de datos, repetir `01_schema.sql` + `02_load_data.sql`.
->>>>>>> 9043699845a17f75d7be8172c167436e62574365
+- Los CSV "clean" deben contener IDs consistentes: si se reduce el catalogo, limpiar tambien copies_clean_1.csv y ratings_clean_1.csv.
+- 02_load_data.sql incluye bloques comentados para cargar una version u otra del dataset (ahora tambien importa user_login.csv, que llena la tabla lib.user_logins enlazada con lib.users para el login).
+- El script etl/carga.py (opcional) muestra como automatizar validaciones y cargas con pandas/psycopg.
+- Cuando se cambie la fuente de datos, repetir 01_schema.sql + 02_load_data.sql.

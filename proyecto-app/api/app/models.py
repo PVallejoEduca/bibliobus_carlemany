@@ -40,6 +40,17 @@ class User(Base):
     member_since: Mapped[date | None] = mapped_column(Date)
 
     ratings: Mapped[list["Rating"]] = relationship(back_populates="user")
+    login: Mapped["UserLogin"] = relationship(back_populates="user", uselist=False, cascade="all, delete-orphan")
+
+
+class UserLogin(Base):
+    __tablename__ = "user_logins"
+
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.user_id", ondelete="CASCADE"), primary_key=True)
+    nickname: Mapped[str] = mapped_column(String(64), unique=True, nullable=False)
+    password_hash: Mapped[str] = mapped_column(String(128), nullable=False)
+
+    user: Mapped[User] = relationship(back_populates="login")
 
 
 class Rating(Base):
